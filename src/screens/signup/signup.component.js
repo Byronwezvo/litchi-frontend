@@ -20,6 +20,15 @@ class Signup extends React.Component {
     //-> Default is load
     e.preventDefault();
 
+    // -> make a post request
+    const url = 'http://localhost:3300/dashboard/signup';
+    fetch(url, {
+      method: 'POST',
+      body: JSON.stringify(this.state),
+    })
+      .then((res) => res.json())
+      .then((json) => console.log(json));
+
     //-> debug
     console.log(this.state);
   }
