@@ -3,11 +3,11 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './App.css';
 
 import Header from './components/header/header.component';
-import Homepage from './components/homepage/homepage.component';
-import Features from './components/features/features.component';
-import Pricing from './components/pricing/pricing.component';
-import Login from './components/login/login.component';
-import Signup from './components/signup/signup.component';
+import Homepage from './screens/homepage/homepage.component';
+import Features from './screens/features/features.component';
+import Pricing from './screens/pricing/pricing.component';
+import Login from './screens/login/login.component';
+import Signup from './screens/signup/signup.component';
 
 function App() {
   return (
