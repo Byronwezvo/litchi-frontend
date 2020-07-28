@@ -6,6 +6,8 @@ class Signup extends React.Component {
 
     this.onSubmit = this.onSubmit.bind(this);
     this.onCompanyNameInput = this.onCompanyNameInput.bind(this);
+    this.onEmailInput = this.onEmailInput.bind(this);
+    this.onPasswordInput = this.onPasswordInput.bind(this);
 
     this.state = {
       company_name: '',
