@@ -44,12 +44,12 @@ class Header extends React.Component {
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="/login">
-                log in
+                login
               </Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="/signup">
-                Sign up
+                Signup
               </Link>
             </li>
           </ul>
