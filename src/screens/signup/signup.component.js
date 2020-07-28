@@ -4,37 +4,52 @@ class Signup extends React.Component {
   constructor(props) {
     super(props);
 
+    this.onCompanyNameInput = this.onCompanyNameInput.bind(this);
+
     this.state = {
-      data: '',
+      company_name: '',
+      company_email: '',
+      company_password: '',
     };
+  }
+
+  onSubmit()
+
+  onCompanyNameInput(e) {
+    this.setState({
+      company_name: e.target.value,
+    });
   }
 
   render() {
     return (
       <div className="container-fluid">
-        <h1>sign up here</h1>
+        <h1 className="display-4">sign up here</h1>
+        <br />
         {/* This is the form */}
         <form>
-          <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input
-              type="email"
-              class="form-control"
-              id="exampleInputEmail1"
-              aria-describedby="emailHelp"
-            />
-            <small id="emailHelp" class="form-text text-muted">
-              We'll never share your email with anyone else.
-            </small>
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input
-              type="password"
-              class="form-control"
-              id="exampleInputPassword1"
-            />
-          </div>
+          <input
+            class="form-control"
+            type="text"
+            required
+            placeholder="Company Name"
+          />
+          <br />
+          <input
+            class="form-control"
+            type="email"
+            required
+            aria-describedby="emailHelp"
+            placeholder="company@email.com"
+          />
+          <br />
+          <input
+            class="form-control"
+            type="password"
+            required
+            placeholder="********"
+          />
+          <br />
 
           <button type="submit" class="btn btn-primary">
             Submit
