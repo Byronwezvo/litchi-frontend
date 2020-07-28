@@ -1,5 +1,5 @@
 .navbar {
-  background-color: white;
+  background-color: #ffffff;
   box-shadow: 0 0 4px #32323254;
   padding-left: 3rem;
   padding-right: 3rem;
@@ -9,5 +9,5 @@
 }
 
 .navbar-light .navbar-nav .nav-link {
-  color: #323232;
+  color: #121420;
 }
