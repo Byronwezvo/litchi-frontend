@@ -1,0 +1,11 @@
+.navbar {
+  background-color: white;
+  box-shadow: 0 0 4px #32323254;
+}
+.navbar-brand {
+  min-height: 0;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: #323232;
+}
