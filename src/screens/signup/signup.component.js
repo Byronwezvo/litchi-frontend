@@ -17,21 +17,27 @@ class Signup extends React.Component {
   }
 
   onSubmit(e) {
+    //-> Default is load
     e.preventDefault();
+
+    //-> debug
     console.log(this.state);
   }
 
   onCompanyNameInput(e) {
+    // -> Update the state
     this.setState({
       company_name: e.target.value,
     });
   }
   onEmailInput(e) {
+    // -> Update the state
     this.setState({
       company_email: e.target.value,
     });
   }
   onPasswordInput(e) {
+    // -> Update the state
     this.setState({
       company_password: e.target.value,
     });
