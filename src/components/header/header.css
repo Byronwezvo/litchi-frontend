@@ -1,6 +1,8 @@
 .navbar {
   background-color: white;
   box-shadow: 0 0 4px #32323254;
+  padding-left: 3rem;
+  padding-right: 3rem;
 }
 .navbar-brand {
   min-height: 0;
