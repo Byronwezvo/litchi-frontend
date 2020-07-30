@@ -45,12 +45,15 @@ class Signup extends React.Component {
     // -> Add method to check if anything is '' then break and throw an error
     for (const [key, value] of Object.entries(this.state)) {
       console.log(`${key}: ${value}`);
-      if (value == '' || ' ') {
+      if (value == '' || ' ' || value.length < 3) {
         // -> Alert the user
         alert('Please check your data');
 
         // -> Set form status to false
         formStatus = false;
+
+        // -> break the loop
+        break;
       }
     }
 
