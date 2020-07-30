@@ -10,7 +10,7 @@ function CustomInput(props) {
         required
         aria-describedby={props.description}
         placeholder={props.placeholder}
-        onChange={props.onEmailInput}
+        onChange={props.onChange}
       />
       <br />
     </div>
