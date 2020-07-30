@@ -16,9 +16,9 @@ class Signup extends React.Component {
     this.state = {
       representative_name: '',
       company_name: '',
+      company_number: '',
       company_email: '',
       company_password: '',
-      company_password: String,
     };
   }
 
