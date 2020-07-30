@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import './header.css';
+import '../navbar_item/navbar_item.component';
+import NavBar_item from '../navbar_item/navbar_item.component';
 
 class Header extends React.Component {
   render() {
@@ -27,31 +29,11 @@ class Header extends React.Component {
           id="navbarNav"
         >
           <ul className="navbar-nav">
-            <li className="nav-item">
-              <Link className="nav-link" to="/">
-                Home
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/features">
-                Features
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/pricing">
-                Pricing
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/login">
-                login
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/signup">
-                Signup
-              </Link>
-            </li>
+            <NavBar_item name="Home" route="/" />
+            <NavBar_item name="Features" route="/features" />
+            <NavBar_item name="Pricing" route="/pricing" />
+            <NavBar_item name="Login" route="/login" />
+            <NavBar_item name="Signup" route="/signup" />
           </ul>
         </div>
       </nav>
