@@ -7,11 +7,6 @@ class Signup extends React.Component {
     super(props);
 
     this.onSubmit = this.onSubmit.bind(this);
-    this.onCompanyNameInput = this.onCompanyNameInput.bind(this);
-    this.onEmailInput = this.onCompanyEmailInput.bind(this);
-    this.onPasswordInput = this.onCompanyPasswordInput.bind(this);
-    this.onRepresentativeInput = this.onRepresentativeInput.bind(this);
-    this.onCompanyPasswordInput = this.onCompanyNumberInput.bind(this);
 
     this.state = {
       representative_name: '',
@@ -27,13 +22,13 @@ class Signup extends React.Component {
     e.preventDefault();
 
     // -> make a post request
-    const url = 'http://localhost:3300/dashboard/signup';
-    fetch(url, {
-      method: 'POST',
-      body: JSON.stringify(this.state),
-    })
-      .then((res) => res.json())
-      .then((json) => console.log(json));
+    // const url = 'http://localhost:3300/dashboard/signup';
+    // fetch(url, {
+    //   method: 'POST',
+    //   body: JSON.stringify(this.state),
+    // })
+    //   .then((res) => res.json())
+    //   .then((json) => console.log(json));
 
     //-> debug
     console.log(this.state);
