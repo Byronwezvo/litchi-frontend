@@ -12,9 +12,11 @@ class Signup extends React.Component {
     this.onPasswordInput = this.onCompanyPasswordInput.bind(this);
 
     this.state = {
+      representative_name: '',
       company_name: '',
       company_email: '',
       company_password: '',
+      company_password: String,
     };
   }
 
