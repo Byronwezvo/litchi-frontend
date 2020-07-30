@@ -55,7 +55,7 @@ class Signup extends React.Component {
   render() {
     return (
       <div className="container-fluid">
-        <h1 className="display-4">sign up here</h1>
+        <h1 className="display-4">Sign up here</h1>
         <br />
         {/* This is the form */}
         <form onSubmit={this.onSubmit}>
