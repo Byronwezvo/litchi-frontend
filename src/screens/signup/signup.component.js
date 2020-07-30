@@ -46,11 +46,11 @@ class Signup extends React.Component {
     for (const [key, value] of Object.entries(this.state)) {
       console.log(`${key}: ${value}`);
       if (value == '' || ' ' || value.length < 3) {
-        // -> Alert the user
-        alert('Please check your data');
-
         // -> Set form status to false
         formStatus = false;
+
+        // -> Alert the user
+        alert('Please check your data');
 
         // -> break the loop
         break;
@@ -67,7 +67,7 @@ class Signup extends React.Component {
     //   .then((json) => console.log(json));
 
     //-> debug
-    console.log(this.state);
+    console.log(formStatus);
   }
 
   /**
