@@ -1,6 +1,7 @@
 import React from 'react';
 
 import CustomInput from '../../components/custom_input/custom_input.component';
+import './signup.css';
 
 class Signup extends React.Component {
   constructor(props) {
@@ -169,6 +170,8 @@ class Signup extends React.Component {
     return (
       <div className="container-fluid">
         <h1 className="display-4">Sign up here</h1>
+        <div className="input-container"></div>
+
         <br />
         {/* This is the form */}
         <form onSubmit={this.onSubmit}>
