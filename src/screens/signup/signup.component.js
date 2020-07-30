@@ -45,7 +45,7 @@ class Signup extends React.Component {
     // -> Add method to check if anything is '' then break and throw an error
     for (const [key, value] of Object.entries(this.state)) {
       console.log(`${key}: ${value}`);
-      if (value == '' || ' ' || value.length < 3) {
+      if (value === '' || value.length < 3) {
         // -> Set form status to false
         formStatus = false;
 
@@ -57,14 +57,20 @@ class Signup extends React.Component {
       }
     }
 
-    // -> make a post request
-    // const url = 'http://localhost:3300/dashboard/signup';
-    // fetch(url, {
-    //   method: 'POST',
-    //   body: JSON.stringify(this.state),
-    // })
-    //   .then((res) => res.json())
-    //   .then((json) => console.log(json));
+    // -> Check if status is true then send
+    if (formStatus === true) {
+      // -> make a post request
+      const url = 'http://localhost:3300/signup';
+      fetch(url, {
+        method: 'POST',
+        body: JSON.stringify(this.state),
+      })
+        .then((res) => res.json())
+        .then((json) => console.log(json));
+    } else {
+      // -> Alert user error
+      alert('There was an error submitting your data');
+    }
 
     //-> debug
     console.log(formStatus);
