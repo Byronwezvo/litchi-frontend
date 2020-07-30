@@ -3,7 +3,6 @@ import React from 'react';
 function CustomInput(props) {
   return (
     <div>
-      <label>{props.label}</label>
       <input
         className="form-control"
         type={props.type}
