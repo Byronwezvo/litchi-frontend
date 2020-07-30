@@ -6,7 +6,17 @@ class Signup extends React.Component {
   constructor(props) {
     super(props);
 
+    /**
+     * Bind methods to the Signup class
+     *
+     * @author Byron Wezvo
+     */
     this.onSubmit = this.onSubmit.bind(this);
+    this.onRepresentativeInput = this.onRepresentativeInput.bind(this);
+    this.onCompanyNameInput = this.onCompanyNameInput.bind(this);
+    this.onCompanyNumberInput = this.onCompanyNumberInput.bind(this);
+    this.onCompanyEmailInput = this.onCompanyEmailInput.bind(this);
+    this.onCompanyPasswordInput = this.onCompanyPasswordInput.bind(this);
 
     this.state = {
       representative_name: '',
