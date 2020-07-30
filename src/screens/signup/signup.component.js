@@ -10,6 +10,8 @@ class Signup extends React.Component {
     this.onCompanyNameInput = this.onCompanyNameInput.bind(this);
     this.onEmailInput = this.onCompanyEmailInput.bind(this);
     this.onPasswordInput = this.onCompanyPasswordInput.bind(this);
+    this.onRepresentativeInput = this.onRepresentativeInput.bind(this);
+    this.onCompanyPasswordInput = this.onCompanyNumberInput.bind(this);
 
     this.state = {
       representative_name: '',
@@ -37,18 +39,34 @@ class Signup extends React.Component {
     console.log(this.state);
   }
 
+  onRepresentativeInput(e) {
+    // -> Update the state
+    this.setState({
+      representative_name: e.target.value,
+    });
+  }
+
   onCompanyNameInput(e) {
     // -> Update the state
     this.setState({
       company_name: e.target.value,
     });
   }
+
+  onCompanyNumberInput(e) {
+    // -> Update the state
+    this.setState({
+      company_number: e.target.value,
+    });
+  }
+
   onCompanyEmailInput(e) {
     // -> Update the state
     this.setState({
       company_email: e.target.value,
     });
   }
+
   onCompanyPasswordInput(e) {
     // -> Update the state
     this.setState({
@@ -67,7 +85,7 @@ class Signup extends React.Component {
             label="Representative Name"
             type="text"
             placeholder="John Doe"
-            onChange={}
+            onChange={this.onRepresentativeInput}
           />
 
           <CustomInput
@@ -81,7 +99,7 @@ class Signup extends React.Component {
             label="Company Number"
             type="text"
             placeholder="07** *** ***"
-            onChange={}
+            onChange={this.onCompanyNumberInput}
           />
 
           <CustomInput
