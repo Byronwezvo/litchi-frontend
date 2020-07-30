@@ -36,8 +36,23 @@ class Signup extends React.Component {
    * @author Byron Wezvo
    */
   onSubmit(e) {
-    //-> Default is load
+    // -> Default is load
     e.preventDefault();
+
+    // -> Form field status [ if something is wrong it will set this var to false ]
+    let formStatus = true;
+
+    // -> Add method to check if anything is '' then break and throw an error
+    for (const [key, value] of Object.entries(this.state)) {
+      console.log(`${key}: ${value}`);
+      if (value == '' || ' ') {
+        // -> Alert the user
+        alert('Please check your data');
+
+        // -> Set form status to false
+        formStatus = false;
+      }
+    }
 
     // -> make a post request
     // const url = 'http://localhost:3300/dashboard/signup';
