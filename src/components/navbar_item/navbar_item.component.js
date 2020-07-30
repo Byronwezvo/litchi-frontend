@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function NavBar_item(props) {
+function Navbar_item(props) {
   return (
     <li className="nav-item">
       <Link className="nav-link" to={props.route}>
@@ -11,4 +11,4 @@ function NavBar_item(props) {
   );
 }
 
-export default NavBar_item;
+export default Navbar_item;
