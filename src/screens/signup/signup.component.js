@@ -45,7 +45,7 @@ class Signup extends React.Component {
     // -> Add method to check if anything is '' then break and throw an error
     for (const [key, value] of Object.entries(this.state)) {
       console.log(`${key}: ${value}`);
-      if (value === '' || value.length < 3) {
+      if (value.length < 3) {
         // -> Set form status to false
         formStatus = false;
 
@@ -60,20 +60,29 @@ class Signup extends React.Component {
     // -> Check if status is true then send
     if (formStatus === true) {
       // -> make a post request
-      const url = 'http://localhost:3300/signup';
-      fetch(url, {
+      const myHeaders = new Headers();
+      myHeaders.append('Content-Type', 'application/json');
+
+      const rawData = JSON.stringify(this.state);
+
+      const requestOptions = {
         method: 'POST',
-        body: JSON.stringify(this.state),
-      })
-        .then((res) => res.json())
-        .then((json) => console.log(json));
+        headers: myHeaders,
+        body: rawData,
+        redirect: 'follow',
+      };
+
+      fetch('http://localhost:3300/signup', requestOptions)
+        .then((response) => response.text())
+        .then((result) => console.log(result))
+        .catch((error) => console.log('error', error));
     } else {
       // -> Alert user error
       alert('There was an error submitting your data');
     }
 
     //-> debug
-    console.log(formStatus);
+    console.log(this.state.data);
   }
 
   /**
