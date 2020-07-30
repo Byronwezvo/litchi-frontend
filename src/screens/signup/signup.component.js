@@ -27,6 +27,14 @@ class Signup extends React.Component {
     };
   }
 
+  /**
+   * # onSubmit method
+   *  is called when the form is submitted, this method will make a request to the
+   * backend, posting the form and awaiting response
+   * @param {*} e
+   *
+   * @author Byron Wezvo
+   */
   onSubmit(e) {
     //-> Default is load
     e.preventDefault();
@@ -44,6 +52,15 @@ class Signup extends React.Component {
     console.log(this.state);
   }
 
+  /**
+   * # onRepresentativeInput method
+   * will update the representative_name state in the state object to a given value
+   * by the client
+   *
+   * @param {*} e
+   *
+   * @author Byron Wezvo
+   */
   onRepresentativeInput(e) {
     // -> Update the state
     this.setState({
@@ -51,6 +68,15 @@ class Signup extends React.Component {
     });
   }
 
+  /**
+   * # onCompanyNameInput method
+   * will update the company_name state in the state object to a given value
+   * by the client
+   *
+   * @param {*} e
+   *
+   * @author Byron Wezvo
+   */
   onCompanyNameInput(e) {
     // -> Update the state
     this.setState({
@@ -58,6 +84,15 @@ class Signup extends React.Component {
     });
   }
 
+  /**
+   * # onCompanyNumberInput method
+   * will update the company_number state in the state object to a given value
+   * by the client
+   *
+   * @param {*} e
+   *
+   * @author Byron Wezvo
+   */
   onCompanyNumberInput(e) {
     // -> Update the state
     this.setState({
@@ -65,6 +100,15 @@ class Signup extends React.Component {
     });
   }
 
+  /**
+   * # onCompanyEmailInput method
+   * will update the company_email state in the state object to a given value
+   * by the client
+   *
+   * @param {*} e
+   *
+   * @author Byron Wezvo
+   */
   onCompanyEmailInput(e) {
     // -> Update the state
     this.setState({
@@ -72,6 +116,15 @@ class Signup extends React.Component {
     });
   }
 
+  /**
+   * # onCompanyPasswordInput method
+   * will update the company_password state in the state object to a given value
+   * by the client
+   *
+   * @param {*} e
+   *
+   * @author Byron Wezvo
+   */
   onCompanyPasswordInput(e) {
     // -> Update the state
     this.setState({
