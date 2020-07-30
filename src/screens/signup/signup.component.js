@@ -1,13 +1,15 @@
 import React from 'react';
 
+import CustomInput from '../../components/custom_input/custom_input.component';
+
 class Signup extends React.Component {
   constructor(props) {
     super(props);
 
     this.onSubmit = this.onSubmit.bind(this);
     this.onCompanyNameInput = this.onCompanyNameInput.bind(this);
-    this.onEmailInput = this.onEmailInput.bind(this);
-    this.onPasswordInput = this.onPasswordInput.bind(this);
+    this.onEmailInput = this.onCompanyEmailInput.bind(this);
+    this.onPasswordInput = this.onCompanyPasswordInput.bind(this);
 
     this.state = {
       company_name: '',
@@ -39,13 +41,13 @@ class Signup extends React.Component {
       company_name: e.target.value,
     });
   }
-  onEmailInput(e) {
+  onCompanyEmailInput(e) {
     // -> Update the state
     this.setState({
       company_email: e.target.value,
     });
   }
-  onPasswordInput(e) {
+  onCompanyPasswordInput(e) {
     // -> Update the state
     this.setState({
       company_password: e.target.value,
@@ -59,31 +61,41 @@ class Signup extends React.Component {
         <br />
         {/* This is the form */}
         <form onSubmit={this.onSubmit}>
-          <input
-            className="form-control"
+          <CustomInput
+            label="Representative Name"
             type="text"
-            required
-            placeholder="Company Name"
+            placeholder="John Doe"
+            onChange={}
+          />
+
+          <CustomInput
+            label="Company Name"
+            type="text"
+            placeholder="microfinance"
             onChange={this.onCompanyNameInput}
           />
-          <br />
-          <input
-            className="form-control"
+
+          <CustomInput
+            label="Company Number"
+            type="text"
+            placeholder="07** *** ***"
+            onChange={}
+          />
+
+          <CustomInput
+            label="Company Email"
             type="email"
-            required
+            placeholder="company@domain.com"
+            onChange={this.onCompanyEmailInput}
             aria-describedby="emailHelp"
-            placeholder="company@email.com"
-            onChange={this.onEmailInput}
           />
-          <br />
-          <input
-            className="form-control"
+
+          <CustomInput
+            label="Password"
             type="password"
-            required
             placeholder="********"
-            onChange={this.onPasswordInput}
+            onChange={this.onCompanyPasswordInput}
           />
-          <br />
 
           <button type="submit" className="btn btn-primary">
             Submit
