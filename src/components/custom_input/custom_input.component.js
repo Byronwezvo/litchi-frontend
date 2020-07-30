@@ -1,8 +1,9 @@
 import React from 'react';
+import './custom_input.css';
 
 function CustomInput(props) {
   return (
-    <div>
+    <div className="input">
       <label>{props.label}</label>
       <input
         className="form-control"

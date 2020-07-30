@@ -168,53 +168,61 @@ class Signup extends React.Component {
 
   render() {
     return (
-      <div className="container-fluid">
+      <div className="container justify-content-center">
         <h1 className="display-4">Sign up here</h1>
-        <div className="input-container"></div>
+        <div className="container signup-section" id="signup-section">
+          <div className="row">
+            <div className="col-sm">
+              <div className="input-container"></div>
+            </div>
+            <div className="col-sm">
+              <div className="form-section">
+                {/* Form here */}
+                <form onSubmit={this.onSubmit}>
+                  <CustomInput
+                    label="Representative Name"
+                    type="text"
+                    placeholder="John Doe"
+                    onChange={this.onRepresentativeInput}
+                  />
 
-        <br />
-        {/* This is the form */}
-        <form onSubmit={this.onSubmit}>
-          <CustomInput
-            label="Representative Name"
-            type="text"
-            placeholder="John Doe"
-            onChange={this.onRepresentativeInput}
-          />
+                  <CustomInput
+                    label="Company Name"
+                    type="text"
+                    placeholder="microfinance"
+                    onChange={this.onCompanyNameInput}
+                  />
 
-          <CustomInput
-            label="Company Name"
-            type="text"
-            placeholder="microfinance"
-            onChange={this.onCompanyNameInput}
-          />
+                  <CustomInput
+                    label="Company Number"
+                    type="text"
+                    placeholder="07** *** ***"
+                    onChange={this.onCompanyNumberInput}
+                  />
 
-          <CustomInput
-            label="Company Number"
-            type="text"
-            placeholder="07** *** ***"
-            onChange={this.onCompanyNumberInput}
-          />
+                  <CustomInput
+                    label="Company Email"
+                    type="email"
+                    placeholder="company@domain.com"
+                    onChange={this.onCompanyEmailInput}
+                    aria-describedby="emailHelp"
+                  />
 
-          <CustomInput
-            label="Company Email"
-            type="email"
-            placeholder="company@domain.com"
-            onChange={this.onCompanyEmailInput}
-            aria-describedby="emailHelp"
-          />
+                  <CustomInput
+                    label="Password"
+                    type="password"
+                    placeholder="********"
+                    onChange={this.onCompanyPasswordInput}
+                  />
 
-          <CustomInput
-            label="Password"
-            type="password"
-            placeholder="********"
-            onChange={this.onCompanyPasswordInput}
-          />
-
-          <button type="submit" className="btn btn-primary">
-            Submit
-          </button>
-        </form>
+                  <button type="submit" className="btn btn-primary">
+                    Submit
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
