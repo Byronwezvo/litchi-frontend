@@ -226,13 +226,14 @@ class Signup extends React.Component {
                   onChange={this.onCompanyPasswordInput}
                 />
               </div>
-
-              <button
-                type="submit"
-                className="btn btn-primary btn-user btn-block sign-up-btn"
-              >
-                Submit
-              </button>
+              <div className="form-group text-center">
+                <button
+                  type="submit"
+                  className="btn btn-outline-primary sign-up-btn"
+                >
+                  Register
+                </button>
+              </div>
             </form>
           </div>
         </div>
