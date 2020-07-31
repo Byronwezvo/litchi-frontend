@@ -1,7 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './App.css';
-import { Button } from 'antd';
 
 import Header from './components/header/header.component';
 import Homepage from './screens/homepage/homepage.component';
@@ -13,9 +12,6 @@ import Signup from './screens/signup/signup.component';
 function App() {
   return (
     <Router>
-      <Button type="primary" style={{ marginLeft: 8 }}>
-        Primary Button
-      </Button>
       <Header />
       <br />
       <Route path="/" exact component={Homepage}></Route>
