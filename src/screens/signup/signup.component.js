@@ -1,6 +1,7 @@
 import React from 'react';
 
 import CustomInput from '../../components/custom_input/custom_input.component';
+import Footer from '../footer/footer.component';
 import './signup.css';
 
 class Signup extends React.Component {
@@ -170,8 +171,6 @@ class Signup extends React.Component {
     return (
       <div className="container user-form-container">
         <div className="row user-form">
-          {/* Image or design */}
-          <div className="col-lg-5 d-none d-lg-block bg-register-image"></div>
           {/* form section */}
           <div className="col-lg-7">
             {/* Form text */}
@@ -227,16 +226,17 @@ class Signup extends React.Component {
                 />
               </div>
               <div className="form-group text-center">
-                <button
-                  type="submit"
-                  className="btn btn-outline-primary sign-up-btn"
-                >
+                <button type="submit" className="btn btn-primary sign-up-btn">
                   Register
                 </button>
               </div>
             </form>
           </div>
+          {/* End of Form */}
+          {/* Image or design */}
+          <div className="col-lg-5 d-none d-lg-block bg-register-image"></div>
         </div>
+        <Footer />
       </div>
     );
   }

@@ -5,7 +5,7 @@ function NavBarItem(props) {
   return (
     <li className="nav-item">
       <Link className="nav-link" to={props.route}>
-        {props.name}
+        <div className="h6">{props.name}</div>
       </Link>
     </li>
   );

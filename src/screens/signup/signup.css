@@ -1,5 +1,5 @@
 body {
-  background-color: white;
+  background-color: #f8f9fc;
 }
 
 .signup-section .col-sm {
@@ -22,17 +22,20 @@ body {
 }
 
 .bg-register-image {
-  background: url('https://source.unsplash.com/2D9PMRTJL2M/600x800');
+  background: url('https://source.unsplash.com/gTV2osuOsJc/600x800');
   background-position: center;
+  border-radius: 10px;
   background-size: cover;
 }
 .user-form-container {
-  margin-bottom: 3rem;
   margin-top: 4rem;
+  padding: 3em;
 }
 .user-form {
-  color: white;
-  background-color: #121420;
+  color: #121420;
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 8px 16px 0 #0000001a, 0 6px 20px 0 #00000011;
 }
 
 .user-form .col-lg-7 {
@@ -40,4 +43,20 @@ body {
   padding-right: 5rem;
   padding-top: 3rem;
   padding-bottom: 3rem;
+}
+
+.navbar-light .navbar-toggler {
+  background-color: white;
+}
+
+.btn-primary {
+  color: white;
+  background-color: #121212;
+  border-color: #121212;
+}
+
+.btn-primary:hover {
+  color: #121212;
+  background-color: white;
+  border-color: #121212;
 }

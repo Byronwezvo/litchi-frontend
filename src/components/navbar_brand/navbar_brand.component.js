@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 function NavBarBrand(props) {
   return (
     <Link className="navbar-brand" to="/">
-      {props.name}
+      <div className="h4">{props.name}</div>
     </Link>
   );
 }
