@@ -1,5 +1,4 @@
 import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 import './header.css';
 import '../navbar_item/navbar_item.component';
