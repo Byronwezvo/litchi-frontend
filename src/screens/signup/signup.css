@@ -1,5 +1,5 @@
 body {
-  background-color: #121420;
+  background-color: white;
 }
 
 .signup-section .col-sm {
@@ -19,19 +19,25 @@ body {
 .sign-up-btn {
   font-size: 0.8rem;
   border-radius: 10rem;
-  padding: 1rem 1rem;
 }
 
 .bg-register-image {
-  background: url('https://source.unsplash.com/Mv9hjnEUHR4/600x800');
+  background: url('https://source.unsplash.com/2D9PMRTJL2M/600x800');
   background-position: center;
   background-size: cover;
 }
-
+.user-form-container {
+  margin-bottom: 3rem;
+  margin-top: 4rem;
+}
 .user-form {
-  background-color: white;
+  color: white;
+  background-color: #121420;
 }
 
 .user-form .col-lg-7 {
-  padding: 3rem;
+  padding-left: 5rem;
+  padding-right: 5rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 }

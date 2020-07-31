@@ -179,41 +179,53 @@ class Signup extends React.Component {
             <br></br>
             {/* Form */}
             <form onSubmit={this.onSubmit}>
-              <CustomInput
-                label="Representative Name"
-                type="text"
-                placeholder="John Doe"
-                onChange={this.onRepresentativeInput}
-              />
+              <div className="form-group row">
+                <div className="col-sm-6 mb-3 mb-sm-0">
+                  <CustomInput
+                    label="Representative Name"
+                    type="text"
+                    placeholder="John Doe"
+                    onChange={this.onRepresentativeInput}
+                  />
+                </div>
+                <div className="col-sm-6 ">
+                  <CustomInput
+                    label="Company Name"
+                    type="text"
+                    placeholder="microfinance"
+                    onChange={this.onCompanyNameInput}
+                  />
+                </div>
+              </div>
 
-              <CustomInput
-                label="Company Name"
-                type="text"
-                placeholder="microfinance"
-                onChange={this.onCompanyNameInput}
-              />
+              <div className="form-group row">
+                <div className="col-sm-6 mb-3 mb-sm-0">
+                  <CustomInput
+                    label="Company Number"
+                    type="text"
+                    placeholder="07** *** ***"
+                    onChange={this.onCompanyNumberInput}
+                  />
+                </div>
+                <div className="col-sm-6 ">
+                  <CustomInput
+                    label="Company Email"
+                    type="email"
+                    placeholder="company@domain.com"
+                    onChange={this.onCompanyEmailInput}
+                    aria-describedby="emailHelp"
+                  />
+                </div>
+              </div>
 
-              <CustomInput
-                label="Company Number"
-                type="text"
-                placeholder="07** *** ***"
-                onChange={this.onCompanyNumberInput}
-              />
-
-              <CustomInput
-                label="Company Email"
-                type="email"
-                placeholder="company@domain.com"
-                onChange={this.onCompanyEmailInput}
-                aria-describedby="emailHelp"
-              />
-
-              <CustomInput
-                label="Password"
-                type="password"
-                placeholder="********"
-                onChange={this.onCompanyPasswordInput}
-              />
+              <div className="form-group">
+                <CustomInput
+                  label="Password"
+                  type="password"
+                  placeholder="********"
+                  onChange={this.onCompanyPasswordInput}
+                />
+              </div>
 
               <button
                 type="submit"

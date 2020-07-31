@@ -7,7 +7,7 @@ import NavBarItem from '../navbar_item/navbar_item.component';
 class DefaultHeader extends React.Component {
   render() {
     return (
-      <nav className="navbar navbar-expand-lg navbar-light">
+      <nav className="navbar navbar-expand-lg navbar-light fixed-top">
         <NavBarBrand name="Litchi" />
         <button
           className="navbar-toggler"

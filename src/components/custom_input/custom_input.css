@@ -6,11 +6,13 @@
 .form_control {
   font-size: 0.8rem;
   border-radius: 10rem;
+  border-color: white;
   padding: 1.5rem 1rem;
 }
 
 .rounded-input {
   font-size: 0.8rem;
   border-radius: 10rem;
-  padding: 1rem 1rem;
+  border-color: white;
+  padding: 0.5rem 1rem;
 }
