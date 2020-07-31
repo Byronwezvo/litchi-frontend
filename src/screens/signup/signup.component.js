@@ -168,54 +168,62 @@ class Signup extends React.Component {
 
   render() {
     return (
-      <div className="container">
-        <h1 className="display-4">Sign up here</h1>
-        <br />
-        {/* This is the form */}
-        <form onSubmit={this.onSubmit}>
-          <CustomInput
-            label="Representative Name"
-            type="text"
-            placeholder="John Doe"
-            onChange={this.onRepresentativeInput}
-          />
+      <div className="container user-form-container">
+        <div className="row user-form">
+          {/* Image or design */}
+          <div className="col-lg-5 d-none d-lg-block bg-register-image"></div>
+          {/* form section */}
+          <div className="col-lg-7">
+            {/* Form text */}
+            <h1 className="display-4 text-center">Register</h1>
+            <br></br>
+            {/* Form */}
+            <form onSubmit={this.onSubmit}>
+              <CustomInput
+                label="Representative Name"
+                type="text"
+                placeholder="John Doe"
+                onChange={this.onRepresentativeInput}
+              />
 
-          <CustomInput
-            label="Company Name"
-            type="text"
-            placeholder="microfinance"
-            onChange={this.onCompanyNameInput}
-          />
+              <CustomInput
+                label="Company Name"
+                type="text"
+                placeholder="microfinance"
+                onChange={this.onCompanyNameInput}
+              />
 
-          <CustomInput
-            label="Company Number"
-            type="text"
-            placeholder="07** *** ***"
-            onChange={this.onCompanyNumberInput}
-          />
+              <CustomInput
+                label="Company Number"
+                type="text"
+                placeholder="07** *** ***"
+                onChange={this.onCompanyNumberInput}
+              />
 
-          <CustomInput
-            label="Company Email"
-            type="email"
-            placeholder="company@domain.com"
-            onChange={this.onCompanyEmailInput}
-            aria-describedby="emailHelp"
-          />
+              <CustomInput
+                label="Company Email"
+                type="email"
+                placeholder="company@domain.com"
+                onChange={this.onCompanyEmailInput}
+                aria-describedby="emailHelp"
+              />
 
-          <CustomInput
-            label="Password"
-            type="password"
-            placeholder="********"
-            onChange={this.onCompanyPasswordInput}
-          />
+              <CustomInput
+                label="Password"
+                type="password"
+                placeholder="********"
+                onChange={this.onCompanyPasswordInput}
+              />
 
-          <button
-            type="submit"
-            className="btn btn-primary btn-user btn-block sign-up-btn"
-          >
-            Submit
-          </button>
-        </form>
+              <button
+                type="submit"
+                className="btn btn-primary btn-user btn-block sign-up-btn"
+              >
+                Submit
+              </button>
+            </form>
+          </div>
+        </div>
       </div>
     );
   }
