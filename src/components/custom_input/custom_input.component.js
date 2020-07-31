@@ -1,4 +1,5 @@
 import React from 'react';
+
 import './custom_input.css';
 
 function CustomInput(props) {
@@ -6,7 +7,7 @@ function CustomInput(props) {
     <div className="input">
       <label>{props.label}</label>
       <input
-        className="form-control"
+        className="form-control rounded-input"
         type={props.type}
         required
         aria-describedby={props.description}

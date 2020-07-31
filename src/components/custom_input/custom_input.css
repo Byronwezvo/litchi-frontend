@@ -4,5 +4,13 @@
 }
 
 .form_control {
-  width: 4rem;
+  font-size: 0.8rem;
+  border-radius: 10rem;
+  padding: 1.5rem 1rem;
+}
+
+.rounded-input {
+  font-size: 0.8rem;
+  border-radius: 10rem;
+  padding: 1rem 1rem;
 }

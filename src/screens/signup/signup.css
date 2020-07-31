@@ -11,3 +11,9 @@
 .form-section {
   background-color: #121420;
 }
+
+.sign-up-btn {
+  font-size: 0.8rem;
+  border-radius: 10rem;
+  padding: 1rem 1rem;
+}
