@@ -1,26 +1,11 @@
 import React from 'react';
-import { Layout, Menu, PageHeader } from 'antd';
 
-// import './header.css';
-// import '../navbar_item/navbar_item.component';
-// import NavBarItem from '../navbar_item/navbar_item.component';
-// import NavBarBrand from '../navbar_brand/navbar_brand.component';
-
-const { Header } = Layout;
+import './header.css';
 
 class DefaultHeader extends React.Component {
   render() {
     return (
-      <div>
-        <Header>
-          <div className="logo" />
-          <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['2']}>
-            <Menu.Item key="1">nav 1</Menu.Item>
-            <Menu.Item key="2">nav 2</Menu.Item>
-            <Menu.Item key="3">nav 3</Menu.Item>
-          </Menu>
-        </Header>
-      </div>
+      <div>header</div>
 
       // <nav className="navbar navbar-expand-lg navbar-light">
       //   <NavBarBrand name="Litchi" />
