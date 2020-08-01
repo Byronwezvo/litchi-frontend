@@ -11,3 +11,7 @@
 .navbar-light .navbar-nav .nav-link {
   color: #121420;
 }
+
+.navbar-light .navbar-toggler {
+  background-color: white;
+}

@@ -1,5 +1,6 @@
 import React from 'react';
-import 'glitch_button.css';
+
+import './glitch_button.css';
 
 /**
  * # Glitch Submit Button

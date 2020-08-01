@@ -33,13 +33,17 @@ body {
   box-shadow: 0 8px 16px 0 #0000001a, 0 6px 20px 0 #00000011;
 }
 
+.form-control:focus {
+  color: #495057;
+  background-color: #fff;
+  border-color: #dc5349;
+  outline: 0;
+  box-shadow: 0 0 6px 0rem #dc5349;
+}
+
 .user-form .col-lg-7 {
   padding-left: 5rem;
   padding-right: 5rem;
   padding-top: 3rem;
   padding-bottom: 3rem;
-}
-
-.navbar-light .navbar-toggler {
-  background-color: white;
 }

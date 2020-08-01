@@ -3,6 +3,7 @@ import React from 'react';
 import CustomInput from '../../components/custom_input/custom_input.component';
 import Footer from '../../components/footer/footer.component';
 import './signup.css';
+import GlitchButton from '../../components/glitch_button/glitch_button.component';
 
 class Signup extends React.Component {
   constructor(props) {
@@ -226,13 +227,7 @@ class Signup extends React.Component {
                 />
               </div>
               <div className="form-group text-center">
-                <button
-                  type="submit"
-                  class="btn effect04"
-                  data-sm-link-text="Litchi"
-                >
-                  <span>Signup</span>
-                </button>
+                <GlitchButton name="Sign up" />
               </div>
             </form>
           </div>
