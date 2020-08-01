@@ -16,11 +16,6 @@ body {
   background-color: #121420;
 }
 
-.sign-up-btn {
-  font-size: 0.8rem;
-  border-radius: 10rem;
-}
-
 .bg-register-image {
   background: url('https://source.unsplash.com/gTV2osuOsJc/600x800');
   background-position: center;
@@ -47,16 +42,4 @@ body {
 
 .navbar-light .navbar-toggler {
   background-color: white;
-}
-
-.btn-primary {
-  color: white;
-  background-color: #121212;
-  border-color: #121212;
-}
-
-.btn-primary:hover {
-  color: #121212;
-  background-color: white;
-  border-color: #121212;
 }
