@@ -175,7 +175,9 @@ class Signup extends React.Component {
           {/* form section */}
           <div className="col-lg-7">
             {/* Form text */}
-            <h1 className="display-4 text-center">Register</h1>
+            <h1 className="text-center" id="register-big-text">
+              Register
+            </h1>
             <br />
             {/* Form */}
             <form onSubmit={this.onSubmit}>

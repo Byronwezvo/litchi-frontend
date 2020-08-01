@@ -26,6 +26,7 @@ body {
   margin-top: 4rem;
   padding: 3em;
 }
+
 .user-form {
   color: #121420;
   border-radius: 10px;
@@ -46,4 +47,11 @@ body {
   padding-right: 5rem;
   padding-top: 3rem;
   padding-bottom: 3rem;
+}
+
+#register-big-text {
+  font-family: 'Geosands';
+  color: #dc5349;
+  opacity: 0.8;
+  font-size: 4em;
 }
