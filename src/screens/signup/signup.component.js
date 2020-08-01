@@ -1,7 +1,7 @@
 import React from 'react';
 
 import CustomInput from '../../components/custom_input/custom_input.component';
-import Footer from '../footer/footer.component';
+import Footer from '../../components/footer/footer.component';
 import './signup.css';
 
 class Signup extends React.Component {
@@ -226,8 +226,12 @@ class Signup extends React.Component {
                 />
               </div>
               <div className="form-group text-center">
-                <button type="submit" className="btn btn-primary sign-up-btn">
-                  Register
+                <button
+                  type="submit"
+                  class="btn effect04"
+                  data-sm-link-text="Litchi"
+                >
+                  <span>Signup</span>
                 </button>
               </div>
             </form>
