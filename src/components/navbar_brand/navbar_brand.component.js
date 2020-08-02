@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './navbar_brand.css';
 
 function NavBarBrand(props) {
   return (
     <Link className="navbar-brand" to="/">
-      <div className="h4">{props.name}</div>
+      <div className="navbar-text">{props.name}</div>
     </Link>
   );
 }
