@@ -2,7 +2,11 @@ import React from 'react';
 
 class Features extends React.Component {
   render() {
-    return <h1>Features</h1>;
+    return (
+      <div className="container page-wrapper">
+        <h1>Features</h1>
+      </div>
+    );
   }
 }
 

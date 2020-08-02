@@ -4,11 +4,11 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Header from './components/header/header.component';
-import Homepage from './screens/homepage/homepage.component';
-import Features from './screens/features/features.component';
-import Pricing from './screens/pricing/pricing.component';
-import Login from './screens/login/login.component';
-import Signup from './screens/signup/signup.component';
+import Homepage from './screens/homepage/homepage.screen';
+import Features from './screens/features/features.screen';
+import Pricing from './screens/pricing/pricing.screen';
+import Login from './screens/login/login.screen';
+import Signup from './screens/signup/signup.screen';
 
 function App() {
   return (

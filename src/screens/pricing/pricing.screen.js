@@ -2,7 +2,11 @@ import React from 'react';
 
 class Pricing extends React.Component {
   render() {
-    return <h1>Pricing</h1>;
+    return (
+      <div className="container page-wrapper">
+        <h1>Pricing</h1>
+      </div>
+    );
   }
 }
 

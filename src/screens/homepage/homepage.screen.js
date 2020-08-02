@@ -2,7 +2,11 @@ import React from 'react';
 
 class Homepage extends React.Component {
   render() {
-    return <h1>Homepage</h1>;
+    return (
+      <div className="container page-wrapper">
+        <h1>Homepage</h1>
+      </div>
+    );
   }
 }
 
