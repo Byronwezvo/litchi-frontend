@@ -1,0 +1,9 @@
+.help-messages-wrapper {
+  padding-top: 10px;
+}
+.help-messages-wrapper .help-message {
+  font-family: 'Caviar Dream Bold';
+  font-size: 1.1em;
+  color: #121420;
+  opacity: 0.5;
+}
