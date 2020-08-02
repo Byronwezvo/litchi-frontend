@@ -170,7 +170,7 @@ class Signup extends React.Component {
 
   render() {
     return (
-      <div className="container user-form-container">
+      <div className="container page-wrapper">
         <div className="row user-form">
           {/* form section */}
           <div className="col-lg-7">

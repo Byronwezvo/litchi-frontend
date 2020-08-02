@@ -22,7 +22,8 @@ body {
   border-radius: 10px;
   background-size: cover;
 }
-.user-form-container {
+
+.page-wrapper {
   margin-top: 4rem;
   padding: 3em;
 }
