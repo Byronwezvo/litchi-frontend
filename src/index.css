@@ -17,6 +17,11 @@ body {
   src: url('./utils/fonts/minimal/Minimal.ttf');
 }
 
+@font-face {
+  font-family: 'RoundedElegancy';
+  src: url('./utils/fonts/rounded-elegance/Rounded Elegance.ttf');
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
