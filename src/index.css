@@ -12,6 +12,11 @@ body {
   src: url('./utils/fonts/geo-sans-light/GeosansLight.ttf');
 }
 
+@font-face {
+  font-family: 'Minimal';
+  src: url('./utils/fonts/minimal/Minimal.ttf');
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
