@@ -16,13 +16,6 @@ body {
   background-color: #121420;
 }
 
-.bg-register-image {
-  background: url('https://source.unsplash.com/mk7D-4UCfmg/600x800');
-  background-position: center;
-  border-radius: 10px;
-  background-size: cover;
-}
-
 .user-form {
   color: #121420;
   border-radius: 10px;
