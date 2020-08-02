@@ -1,4 +1,5 @@
 import React from 'react';
+import { Brow } from 'react-router-dom';
 import './login.css';
 import CustomInput from '../../components/custom_input/custom_input.component';
 import GlitchButton from '../../components/glitch_button/glitch_button.component';
@@ -16,6 +17,7 @@ class Login extends React.Component {
     this.onSubmit = this.onSubmit.bind(this);
     this.onCompanyEmailInput = this.onCompanyEmailInput.bind(this);
     this.onCompanyPasswordInput = this.onCompanyPasswordInput.bind(this);
+    this.routeToDashboard = this.routeToDashboard.bind(this);
 
     this.state = {
       company_email: '',
@@ -71,12 +73,15 @@ class Login extends React.Component {
       fetch('http://localhost:3300/login', requestOptions)
         .then((response) => response.text())
         .then((result) => console.log(result))
-        .catch((error) => console.log('error', error));
+        .catch((error) => {
+          console.log('error', error);
+        });
+
+      this.routeToDashboard();
     } else {
       // -> Alert user error
       alert('There was an error submitting your data');
     }
-
     //-> debug
     console.log(this.state.data);
   }
@@ -111,6 +116,18 @@ class Login extends React.Component {
     this.setState({
       company_password: e.target.value,
     });
+  }
+
+  /**
+   * # Route To Dashboard
+   *
+   * This function will only be called when user has submitted the correct details
+   * and at this point we might want to give them access to the dashboard
+   *
+   * @author Byron Wezvo
+   */
+  routeToDashboard() {
+    window.location = '/dashboard';
   }
 
   render() {
