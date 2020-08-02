@@ -22,6 +22,16 @@ body {
   src: url('./utils/fonts/rounded-elegance/Rounded Elegance.ttf');
 }
 
+@font-face {
+  font-family: 'Caviar Dream';
+  src: url('./utils/fonts/caviar-dreams/CaviarDreams.ttf');
+}
+
+@font-face {
+  font-family: 'Caviar Dream Bold';
+  src: url('./utils/fonts/caviar-dreams/Caviar Dreams Bold.ttf');
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
