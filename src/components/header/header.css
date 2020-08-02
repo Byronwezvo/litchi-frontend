@@ -14,5 +14,10 @@
 }
 
 .navbar-light .navbar-toggler {
-  background-color: white;
+  border-color: white;
+}
+
+.navbar-light .navbar-toggler-icon {
+  color: #dc5349;
+  opacity: 0.6;
 }
