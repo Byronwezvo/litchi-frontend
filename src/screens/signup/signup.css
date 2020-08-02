@@ -38,13 +38,13 @@ body {
 .form-control:focus {
   color: #495057;
   background-color: #fff;
-  border-color: #dc5349;
+  border-color: #121420;
   outline: 0;
-  box-shadow: 0 0 6px 0rem #dc5349;
+  box-shadow: 0 0 6px 0rem #121420;
 }
 .form-control {
   opacity: 0.5;
-  border: 1px solid #dc5349;
+  border: 1px solid #121420;
 }
 
 .user-form .col-lg-7 {
@@ -55,8 +55,8 @@ body {
 }
 
 #register-big-text {
-  font-family: 'Minimal';
-  color: #dc5349;
+  font-family: 'Caviar Dream';
+  color: #121420;
   opacity: 0.6;
   font-size: 4em;
 }
