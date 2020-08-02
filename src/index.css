@@ -41,3 +41,10 @@ code {
   margin-top: 3rem;
   padding: 3em;
 }
+
+.bg-register-image {
+  background: url('https://source.unsplash.com/7JX0-bfiuxQ/600x800');
+  background-position: center;
+  border-radius: 10px;
+  background-size: cover;
+}
