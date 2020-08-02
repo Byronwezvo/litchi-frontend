@@ -5,7 +5,7 @@ import './custom_input.css';
 function CustomInput(props) {
   return (
     <div className="input">
-      <label className="h6">{props.label}</label>
+      <label className="input-label">{props.label}</label>
       <input
         className="form-control rounded-input"
         type={props.type}

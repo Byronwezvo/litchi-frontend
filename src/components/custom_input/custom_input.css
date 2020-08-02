@@ -14,3 +14,10 @@
   border-radius: 10rem;
   padding: 0.5rem 1rem;
 }
+
+.input-label {
+  font-family: 'Geosands';
+  font-weight: 700;
+  color: #dc5329;
+  opacity: 0.5;
+}

@@ -17,7 +17,7 @@ body {
 }
 
 .bg-register-image {
-  background: url('https://source.unsplash.com/gTV2osuOsJc/600x800');
+  background: url('https://source.unsplash.com/TNMgD281040/600x800');
   background-position: center;
   border-radius: 10px;
   background-size: cover;
@@ -41,6 +41,10 @@ body {
   outline: 0;
   box-shadow: 0 0 6px 0rem #dc5349;
 }
+.form-control {
+  opacity: 0.5;
+  border: 1px solid #dc5349;
+}
 
 .user-form .col-lg-7 {
   padding-left: 5rem;
@@ -52,6 +56,6 @@ body {
 #register-big-text {
   font-family: 'Geosands';
   color: #dc5349;
-  opacity: 0.8;
+  opacity: 0.6;
   font-size: 4em;
 }
