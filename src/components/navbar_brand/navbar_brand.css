@@ -1,5 +1,8 @@
-.navbar-text {
-  font-family: 'Minimal';
+.navbar-light .navbar-text {
+  color: #dc5349;
+  font-family: 'RoundedElegancy';
   font-weight: bold;
-  font-size: 1.3em;
+  letter-spacing: 3px;
+  opacity: 0.6;
+  padding: 0;
 }
