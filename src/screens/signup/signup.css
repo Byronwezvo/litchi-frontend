@@ -23,11 +23,6 @@ body {
   background-size: cover;
 }
 
-.page-wrapper {
-  margin-top: 4rem;
-  padding: 3em;
-}
-
 .user-form {
   color: #121420;
   border-radius: 10px;
