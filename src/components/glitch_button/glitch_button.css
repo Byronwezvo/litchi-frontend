@@ -17,8 +17,8 @@
 .effect04 {
   --uismLinkDisplay: var(--smLinkDisplay, inline-flex);
   display: var(--uismLinkDisplay);
-  color: #dc5349;
-  outline: solid 2px #dc5349;
+  color: #121420;
+  outline: solid 2px #121420;
   position: relative;
   transition-duration: 0.4s;
   overflow: hidden;
@@ -33,7 +33,7 @@
 
 /* 文字1を上に */
 .effect04:hover {
-  background-color: #dc5349;
+  background-color: #121420;
 }
 
 /* HOVERしたら文字1を上に */
