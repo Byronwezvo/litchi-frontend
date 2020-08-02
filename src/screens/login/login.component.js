@@ -13,16 +13,72 @@ class Login extends React.Component {
      *
      * @author Byron Wezvo
      */
+    this.onSubmit = this.onSubmit.bind(this);
     this.onCompanyEmailInput = this.onCompanyEmailInput.bind(this);
     this.onCompanyPasswordInput = this.onCompanyPasswordInput.bind(this);
 
     this.state = {
-      representative_name: '',
-      company_name: '',
-      company_number: '',
       company_email: '',
       company_password: '',
     };
+  }
+
+  /**
+   * # onSubmit method
+   *  is called when the form is submitted, this method will make a request to the
+   * backend, posting the form and awaiting response
+   * @param {*} e
+   *
+   * @author Byron Wezvo
+   */
+  onSubmit(e) {
+    // -> Default is load
+    e.preventDefault();
+
+    // -> Form field status [ if something is wrong it will set this var to false ]
+    let formStatus = true;
+
+    // -> Add method to check if anything is '' then break and throw an error
+    for (const [key, value] of Object.entries(this.state)) {
+      console.log(`${key}: ${value}`);
+      if (value.length < 3) {
+        // -> Set form status to false
+        formStatus = false;
+
+        // -> Alert the user
+        alert('Please check your data');
+
+        // -> break the loop
+        break;
+      }
+    }
+
+    // -> Check if status is true then send
+    if (formStatus === true) {
+      // -> make a post request
+      const myHeaders = new Headers();
+      myHeaders.append('Content-Type', 'application/json');
+
+      const rawData = JSON.stringify(this.state);
+
+      const requestOptions = {
+        method: 'POST',
+        headers: myHeaders,
+        body: rawData,
+        redirect: 'follow',
+      };
+
+      fetch('http://localhost:3300/login', requestOptions)
+        .then((response) => response.text())
+        .then((result) => console.log(result))
+        .catch((error) => console.log('error', error));
+    } else {
+      // -> Alert user error
+      alert('There was an error submitting your data');
+    }
+
+    //-> debug
+    console.log(this.state.data);
   }
 
   /**
