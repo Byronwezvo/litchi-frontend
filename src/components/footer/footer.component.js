@@ -7,7 +7,7 @@ function Footer() {
   return (
     <div className="footer">
       <div className="container text-center">
-        <div className="h6">
+        <div className="footer-text">
           Copyright - {date.getFullYear()} Litchi, Made with ❤ by Byron Wezvo
         </div>
       </div>
