@@ -17,7 +17,7 @@ body {
 }
 
 .bg-register-image {
-  background: url('https://source.unsplash.com/TNMgD281040/600x800');
+  background: url('https://source.unsplash.com/mk7D-4UCfmg/600x800');
   background-position: center;
   border-radius: 10px;
   background-size: cover;
@@ -55,7 +55,7 @@ body {
 }
 
 #register-big-text {
-  font-family: 'Geosands';
+  font-family: 'Minimal';
   color: #dc5349;
   opacity: 0.6;
   font-size: 4em;
