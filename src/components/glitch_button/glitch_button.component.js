@@ -13,7 +13,7 @@ import './glitch_button.css';
  */
 function GlitchButton({ name }) {
   return (
-    <button type="submit" class="btn effect04" data-sm-link-text="Litchi">
+    <button type="submit" className="btn effect04" data-sm-link-text="Litchi">
       <span>{name}</span>
     </button>
   );
