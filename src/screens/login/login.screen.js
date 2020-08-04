@@ -1,6 +1,6 @@
 import React from 'react';
 import './login.css';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import CustomInput from '../../components/custom_input/custom_input.component';
 import GlitchButton from '../../components/glitch_button/glitch_button.component';
 import Footer from '../../components/footer/footer.component';
@@ -46,8 +46,6 @@ class Login extends React.Component {
       if (value.length < 3) {
         // -> Set form status to false
         formStatus = false;
-
-        this.createNotification();
 
         // -> Alert the user
         toast.warn('There is a problem with your data', {
@@ -217,13 +215,6 @@ class Login extends React.Component {
                 </p>
               </div>
             </form>
-            <button
-              onClick={() => {
-                toast('Wow so easy !');
-              }}
-            >
-              test
-            </button>
           </div>
           {/* End of Form */}
           {/* Image or design */}
