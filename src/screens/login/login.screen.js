@@ -11,7 +11,7 @@ class Login extends React.Component {
    * 
    @author Byron Wezvo
    */
-  componentWillMount() {
+  componentDidMount() {
     sessionStorage.clear();
   }
 
