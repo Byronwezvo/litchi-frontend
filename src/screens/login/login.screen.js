@@ -162,6 +162,10 @@ class Login extends React.Component {
    *
    * @author Byron Wezvo
    */
+  saveToSessionStorage(object) {
+    // -> Local storage / Session Storage
+    sessionStorage.setItem('payload', JSON.stringify(object));
+  }
 
   /**
    * # Route To Dashboard
