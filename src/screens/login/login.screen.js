@@ -1,5 +1,6 @@
 import React from 'react';
 import './login.css';
+import { ToastContainer, toast } from 'react-toastify';
 import CustomInput from '../../components/custom_input/custom_input.component';
 import GlitchButton from '../../components/glitch_button/glitch_button.component';
 import Footer from '../../components/footer/footer.component';
@@ -46,8 +47,18 @@ class Login extends React.Component {
         // -> Set form status to false
         formStatus = false;
 
+        this.createNotification();
+
         // -> Alert the user
-        alert('Please check your data');
+        toast.warn('There is a problem with your data', {
+          position: 'top-center',
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
 
         // -> break the loop
         break;
@@ -70,19 +81,43 @@ class Login extends React.Component {
       };
 
       fetch('http://localhost:3300/login', requestOptions)
-        .then((response) => response.text())
+        .then((response) => {
+          // -> Check to see the response status
+          if (response.status === 200) {
+            return response.text();
+          } else {
+            // -> Create an error
+            toast.error('Invalid username or password.', {
+              position: 'top-center',
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+            });
+          }
+        })
         .then((result) => console.log(result))
         .catch((error) => {
           console.log('error', error);
         });
 
-      this.routeToDashboard();
+      // this.routeToDashboard();
     } else {
       // -> Alert user error
-      alert('There was an error submitting your data');
+      toast.error('There is an error please check your details.', {
+        position: 'top-center',
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
     }
     //-> debug
-    console.log(this.state.data);
+    console.log(this.state);
   }
 
   /**
@@ -116,6 +151,15 @@ class Login extends React.Component {
       company_password: e.target.value,
     });
   }
+
+  /**
+   * # Process Response [ from API ]
+   *
+   * this method is called only when response code is 200 level
+   *
+   * @author Byron Wezvo
+   */
+  initSessionStorage() {}
 
   /**
    * # Route To Dashboard
@@ -173,6 +217,13 @@ class Login extends React.Component {
                 </p>
               </div>
             </form>
+            <button
+              onClick={() => {
+                toast('Wow so easy !');
+              }}
+            >
+              test
+            </button>
           </div>
           {/* End of Form */}
           {/* Image or design */}
