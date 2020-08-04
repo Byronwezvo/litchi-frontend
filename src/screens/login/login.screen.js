@@ -81,17 +81,6 @@ class Login extends React.Component {
         .then((response) => {
           // -> Check to see the response status
           if (response.status === 200) {
-            // -> Create a success notification
-            toast.success('✅ Yey. Lets get you there.', {
-              position: 'top-center',
-              autoClose: 5000,
-              hideProgressBar: false,
-              closeOnClick: true,
-              pauseOnHover: true,
-              draggable: true,
-              progress: undefined,
-            });
-
             // -> convert response to json
             return response.json();
           } else {
