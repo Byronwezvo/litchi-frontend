@@ -1,7 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'react-toastify/dist/ReactToastify.css';
 
 import Header from './components/header/header.component';
 import Homepage from './screens/homepage/homepage.screen';
@@ -14,6 +16,17 @@ import Dashboard from './screens/dashboard/dashboard.screen';
 function App() {
   return (
     <Router>
+      <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
       <Header />
       <br />
       <Route path="/" exact component={Homepage}></Route>
