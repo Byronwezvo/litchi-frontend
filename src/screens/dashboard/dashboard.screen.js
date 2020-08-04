@@ -1,4 +1,5 @@
 import React from 'react';
+import { toast } from 'react-toastify';
 
 class Dashboard extends React.Component {
   componentDidMount() {
@@ -10,7 +11,21 @@ class Dashboard extends React.Component {
       // -> route user to login screen
       this.routeToLogin();
     } else {
-      console.log('Yey');
+      // -> parse json string into json object
+      const prettyPayload = JSON.parse(payload);
+
+      // -> generate a hello notification from company name
+      toast.success(`✅ Hello, {company name here}`, {
+        position: 'top-center',
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+
+      console.log(prettyPayload);
     }
   }
 
