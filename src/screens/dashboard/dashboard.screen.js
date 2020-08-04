@@ -15,7 +15,7 @@ class Dashboard extends React.Component {
       const prettyPayload = JSON.parse(payload);
 
       // -> generate a hello notification from company name
-      toast.success(`✅ Hello, {company name here}`, {
+      toast.success(`✅ Hello, ${prettyPayload.company_name}`, {
         position: 'top-center',
         autoClose: 5000,
         hideProgressBar: false,
@@ -25,7 +25,7 @@ class Dashboard extends React.Component {
         progress: undefined,
       });
 
-      console.log(prettyPayload);
+      console.log(prettyPayload.company_name);
     }
   }
 
