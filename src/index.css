@@ -49,6 +49,6 @@ code {
   background-size: cover;
 }
 
-.Toastify {
+.Toastify__toast-body {
   font-family: 'Caviar Dream Bold';
 }
