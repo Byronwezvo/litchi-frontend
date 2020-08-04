@@ -48,7 +48,7 @@ class Login extends React.Component {
         formStatus = false;
 
         // -> Alert the user
-        toast.warn('There is a problem with your data', {
+        toast.warn('🤔 There is a problem with your data', {
           position: 'top-center',
           autoClose: 5000,
           hideProgressBar: false,
@@ -85,7 +85,7 @@ class Login extends React.Component {
             return response.text();
           } else {
             // -> Create an error
-            toast.error('Invalid username or password.', {
+            toast.error('😥 Invalid username or password.', {
               position: 'top-center',
               autoClose: 5000,
               hideProgressBar: false,
@@ -104,7 +104,7 @@ class Login extends React.Component {
       // this.routeToDashboard();
     } else {
       // -> Alert user error
-      toast.error('There is an error please check your details.', {
+      toast.error('😭 There is an error please check your details.', {
         position: 'top-center',
         autoClose: 5000,
         hideProgressBar: false,
