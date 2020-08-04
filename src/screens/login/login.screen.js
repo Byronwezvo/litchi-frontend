@@ -4,6 +4,7 @@ import { toast } from 'react-toastify';
 import CustomInput from '../../components/custom_input/custom_input.component';
 import GlitchButton from '../../components/glitch_button/glitch_button.component';
 import Footer from '../../components/footer/footer.component';
+import Header from '../../components/header/header.component';
 
 class Login extends React.Component {
   /**
@@ -180,54 +181,58 @@ class Login extends React.Component {
 
   render() {
     return (
-      <div className="container page-wrapper">
-        <div className="row user-form">
-          {/* form section */}
-          <div className="col-lg-7">
-            {/* Form text */}
-            <h1 className="text-center" id="register-big-text">
-              Log in
-            </h1>
-            <br />
-            {/* Form */}
-            <form onSubmit={this.onSubmit}>
-              <div className="form-group">
-                <CustomInput
-                  label="Company Email"
-                  type="email"
-                  placeholder="company@domain.com"
-                  onChange={this.onCompanyEmailInput}
-                  aria-describedby="emailHelp"
-                />
-              </div>
+      <div>
+        <Header />
 
-              <div className="form-group">
-                <CustomInput
-                  label="Password"
-                  type="password"
-                  placeholder="********"
-                  onChange={this.onCompanyPasswordInput}
-                />
-              </div>
+        <div className="container page-wrapper">
+          <div className="row user-form">
+            {/* form section */}
+            <div className="col-lg-7">
+              {/* Form text */}
+              <h1 className="text-center" id="register-big-text">
+                Log in
+              </h1>
+              <br />
+              {/* Form */}
+              <form onSubmit={this.onSubmit}>
+                <div className="form-group">
+                  <CustomInput
+                    label="Company Email"
+                    type="email"
+                    placeholder="company@domain.com"
+                    onChange={this.onCompanyEmailInput}
+                    aria-describedby="emailHelp"
+                  />
+                </div>
 
-              <div className="form-group text-center">
-                <GlitchButton name="Log in" />
-              </div>
+                <div className="form-group">
+                  <CustomInput
+                    label="Password"
+                    type="password"
+                    placeholder="********"
+                    onChange={this.onCompanyPasswordInput}
+                  />
+                </div>
 
-              <div className="help-messages-wrapper">
-                <p className="help-message">Forgot password</p>
-                <p className="help-message">Not a user, Create account</p>
-                <p className="help-message">
-                  I'm having other problems logging into my account
-                </p>
-              </div>
-            </form>
+                <div className="form-group text-center">
+                  <GlitchButton name="Log in" />
+                </div>
+
+                <div className="help-messages-wrapper">
+                  <p className="help-message">Forgot password</p>
+                  <p className="help-message">Not a user, Create account</p>
+                  <p className="help-message">
+                    I'm having other problems logging into my account
+                  </p>
+                </div>
+              </form>
+            </div>
+            {/* End of Form */}
+            {/* Image or design */}
+            <div className="col-lg-5 d-none d-lg-block bg-register-image"></div>
           </div>
-          {/* End of Form */}
-          {/* Image or design */}
-          <div className="col-lg-5 d-none d-lg-block bg-register-image"></div>
+          <Footer />
         </div>
-        <Footer />
       </div>
     );
   }
