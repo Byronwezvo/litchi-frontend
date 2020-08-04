@@ -25,7 +25,7 @@ function App() {
         pauseOnFocusLoss
         draggable
       />
-      <Header />
+      {/* <Header /> */}
       <br />
       <Route path="/" exact component={Homepage}></Route>
       <Route path="/features" exact component={Features}></Route>
