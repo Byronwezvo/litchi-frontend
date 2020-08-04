@@ -18,6 +18,7 @@ class Login extends React.Component {
     this.onCompanyEmailInput = this.onCompanyEmailInput.bind(this);
     this.onCompanyPasswordInput = this.onCompanyPasswordInput.bind(this);
     this.routeToDashboard = this.routeToDashboard.bind(this);
+    this.saveToSessionStorage = this.saveToSessionStorage.bind(this);
 
     this.state = {
       company_email: '',
@@ -47,17 +48,6 @@ class Login extends React.Component {
         // -> Set form status to false
         formStatus = false;
 
-        // -> Alert the user
-        toast.warn('🤔 There is a problem with your data', {
-          position: 'top-center',
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-        });
-
         // -> break the loop
         break;
       }
@@ -82,10 +72,22 @@ class Login extends React.Component {
         .then((response) => {
           // -> Check to see the response status
           if (response.status === 200) {
-            return response.text();
+            // -> Create a success notification
+            toast.success('✅ Yey. Lets get you there.', {
+              position: 'top-center',
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+            });
+
+            // -> convert response to json
+            return response.json();
           } else {
             // -> Create an error
-            toast.error('😥 Invalid username or password.', {
+            toast.error('🤔 Invalid username or password.', {
               position: 'top-center',
               autoClose: 5000,
               hideProgressBar: false,
@@ -96,7 +98,10 @@ class Login extends React.Component {
             });
           }
         })
-        .then((result) => console.log(result))
+        .then((result) => {
+          // -> call the saveToSessionStorage function
+          this.saveToSessionStorage(result);
+        }) // Todo : save data to
         .catch((error) => {
           console.log('error', error);
         });
@@ -104,7 +109,7 @@ class Login extends React.Component {
       // this.routeToDashboard();
     } else {
       // -> Alert user error
-      toast.error('😭 There is an error please check your details.', {
+      toast.error('😭 Invalid Details.', {
         position: 'top-center',
         autoClose: 5000,
         hideProgressBar: false,
@@ -157,7 +162,6 @@ class Login extends React.Component {
    *
    * @author Byron Wezvo
    */
-  initSessionStorage() {}
 
   /**
    * # Route To Dashboard
