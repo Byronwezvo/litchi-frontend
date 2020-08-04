@@ -1,0 +1,23 @@
+.navbar {
+  background-color: #ffffff;
+  box-shadow: 0 0 4px #32323254;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  margin-bottom: 4em;
+}
+.navbar-brand {
+  min-height: 0;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: #121420;
+}
+
+.navbar-light .navbar-toggler {
+  border-color: white;
+}
+
+.navbar-light .navbar-toggler-icon {
+  color: #dc5349;
+  opacity: 0.6;
+}

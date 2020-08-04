@@ -1,6 +1,8 @@
 import React from 'react';
 import { toast } from 'react-toastify';
 
+import DashboardHeader from '../../components/dashboard_header/dashboard_header.component';
+
 class Dashboard extends React.Component {
   componentDidMount() {
     // -> Try find data stored in Session storage
@@ -49,8 +51,12 @@ class Dashboard extends React.Component {
 
   render() {
     return (
-      <div className="container page-wrapper">
-        <h1>Dashboard</h1>
+      <div>
+        <DashboardHeader />
+
+        <div className="container page-wrapper">
+          <h1>Dashboard</h1>
+        </div>
       </div>
     );
   }
