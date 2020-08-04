@@ -6,6 +6,15 @@ import GlitchButton from '../../components/glitch_button/glitch_button.component
 import Footer from '../../components/footer/footer.component';
 
 class Login extends React.Component {
+  /**
+   * Basically clean the session storage
+   * 
+   @author Byron Wezvo
+   */
+  componentWillMount() {
+    sessionStorage.clear();
+  }
+
   constructor(props) {
     super(props);
 
@@ -101,12 +110,13 @@ class Login extends React.Component {
         .then((result) => {
           // -> call the saveToSessionStorage function
           this.saveToSessionStorage(result);
+
+          // -> route user to dashboard
+          this.routeToDashboard();
         }) // Todo : save data to
         .catch((error) => {
           console.log('error', error);
         });
-
-      // this.routeToDashboard();
     } else {
       // -> Alert user error
       toast.error('😭 Invalid Details.', {
