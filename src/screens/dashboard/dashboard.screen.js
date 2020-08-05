@@ -16,6 +16,8 @@ class Dashboard extends React.Component {
       // -> parse json string into json object
       const prettyPayload = JSON.parse(payload);
 
+      // -> Add payload data to state
+
       // -> generate a hello notification from company name
       toast.success(`✅ Hello, ${prettyPayload.company_name}`, {
         position: 'top-center',
@@ -118,6 +120,20 @@ class Dashboard extends React.Component {
         .then((result) => console.log(result))
         .catch((error) => console.log('error', error));
     }, 150000);
+  }
+
+  /**
+   * # Save Payload to State
+   *
+   * This function will take payload and basically set it into state under
+   * `account data`.
+   *
+   * @author Byron Wezvo
+   */
+  savePayloadToState(payload) {
+    this.setState({
+      account_data: payload,
+    });
   }
 
   /**
