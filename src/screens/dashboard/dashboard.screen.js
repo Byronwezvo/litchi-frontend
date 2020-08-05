@@ -77,6 +77,19 @@ class Dashboard extends React.Component {
   }
 
   /**
+   * # Update Pulse
+   *
+   * This function will update the pulse in the database using the pulse update
+   * route already implemented in the api.
+   *
+   * @author Byron Wezvo
+   */
+  updatePulse() {
+    // Basically run this function after 2mins 50 seconds (150,000)
+    setInterval(() => {}, 150000);
+  }
+
+  /**
    * # Route user to log in
    *
    * This function is called when a user automatically tries to access
