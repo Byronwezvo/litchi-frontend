@@ -1,7 +1,6 @@
 import React from 'react';
 
 import NavBarBrand from '../navbar_brand/navbar_brand.component';
-import NavBarItem from '../navbar_item/navbar_item.component';
 
 import './dashboard_header.css';
 

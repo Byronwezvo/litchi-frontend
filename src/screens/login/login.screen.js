@@ -13,6 +13,7 @@ class Login extends React.Component {
    @author Byron Wezvo
    */
   componentDidMount() {
+    // -> session storage whenever this is rendered
     sessionStorage.clear();
   }
 
@@ -98,11 +99,17 @@ class Login extends React.Component {
           }
         })
         .then((result) => {
-          // -> call the saveToSessionStorage function
-          this.saveToSessionStorage(result);
-
-          // -> route user to dashboard
-          this.routeToDashboard();
+          if (result === undefined) {
+            // -> Route back user to login
+            window.location('/login');
+            console.log('Error');
+          } else {
+            // -> call the saveToSessionStorage function
+            this.saveToSessionStorage(result);
+            // -> route user to dashboard
+            this.routeToDashboard();
+          }
+          console.log(result);
         }) // Todo : save data to
         .catch((error) => {
           console.log('error', error);
