@@ -86,7 +86,27 @@ class Dashboard extends React.Component {
    */
   updatePulse() {
     // Basically run this function after 2mins 50 seconds (150,000)
-    setInterval(() => {}, 150000);
+    setInterval(() => {
+      const myHeaders = new Headers();
+      myHeaders.append('Content-Type', 'application/json');
+
+      const raw = JSON.stringify({
+        company_email: 'test@test.com',
+        current_pulse_id: '11f7d2c6-9565-4a1d-ba67-4ce6bc80a4b2',
+      });
+
+      const requestOptions = {
+        method: 'POST',
+        headers: myHeaders,
+        body: raw,
+        redirect: 'follow',
+      };
+
+      fetch('http://localhost:3300/dashboard/pulse', requestOptions)
+        .then((response) => response.text())
+        .then((result) => console.log(result))
+        .catch((error) => console.log('error', error));
+    }, 150000);
   }
 
   /**
