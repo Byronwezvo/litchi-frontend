@@ -5,7 +5,6 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'react-toastify/dist/ReactToastify.css';
 
-import Header from './components/header/header.component';
 import Homepage from './screens/homepage/homepage.screen';
 import Features from './screens/features/features.screen';
 import Pricing from './screens/pricing/pricing.screen';
