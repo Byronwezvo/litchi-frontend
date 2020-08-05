@@ -1,4 +1,5 @@
 import React from 'react';
+import { toast } from 'react-toastify';
 
 import CustomInput from '../../components/custom_input/custom_input.component';
 import Footer from '../../components/footer/footer.component';
@@ -54,9 +55,6 @@ class Signup extends React.Component {
         // -> Set form status to false
         formStatus = false;
 
-        // -> Alert the user
-        alert('Please check your data');
-
         // -> break the loop
         break;
       }
@@ -93,9 +91,6 @@ class Signup extends React.Component {
         progress: undefined,
       });
     }
-
-    //-> debug
-    console.log(this.state.data);
   }
 
   /**
