@@ -68,7 +68,7 @@ class Dashboard extends React.Component {
             console.log('user is online');
           } else {
             // -> If status is set to false take user back to log in page
-            window.location = '/login';
+            this.routeToLogin();
           }
         })
         .catch((error) => console.log('error', error));
