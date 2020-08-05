@@ -50,7 +50,7 @@ class Signup extends React.Component {
 
     // -> Add method to check if anything is '' then break and throw an error
     for (const [key, value] of Object.entries(this.state)) {
-      console.log(`${key}: ${value}`);
+      // console.log(`${key}: ${value}`);
       if (value.length < 3) {
         // -> Set form status to false
         formStatus = false;
