@@ -4,6 +4,24 @@ import { toast } from 'react-toastify';
 import DashboardHeader from '../../components/dashboard_header/dashboard_header.component';
 
 class Dashboard extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.routeToLogin = this.routeToLogin.bind(this);
+    this.checkStatus = this.checkStatus.bind(this);
+
+    /**
+     * # State
+     *
+     * The app's entire state
+     *
+     * @author Byron Wezvo
+     */
+    this.state = {
+      account_data: {},
+    };
+  }
+
   componentDidMount() {
     // -> Try find data stored in Session storage
     const payload = sessionStorage.getItem('payload');
@@ -31,24 +49,6 @@ class Dashboard extends React.Component {
     }
 
     this.checkStatus();
-  }
-
-  constructor(props) {
-    super(props);
-
-    this.routeToLogin = this.routeToLogin.bind(this);
-    this.checkStatus = this.checkStatus.bind(this);
-
-    /**
-     * # State
-     *
-     * The app's entire state
-     *
-     * @author Byron Wezvo
-     */
-    this.state = {
-      account_data: {},
-    };
   }
 
   /**
