@@ -9,6 +9,7 @@ class Dashboard extends React.Component {
 
     this.routeToLogin = this.routeToLogin.bind(this);
     this.checkStatus = this.checkStatus.bind(this);
+    this.savePayloadToState = this.savePayloadToState.bind(this);
 
     /**
      * # State
@@ -35,6 +36,7 @@ class Dashboard extends React.Component {
       const prettyPayload = JSON.parse(payload);
 
       // -> Add payload data to state
+      this.savePayloadToState(prettyPayload);
 
       // -> generate a hello notification from company name
       toast.success(`✅ Hello, ${prettyPayload.company_name}`, {
