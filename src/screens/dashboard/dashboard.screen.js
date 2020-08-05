@@ -36,6 +36,17 @@ class Dashboard extends React.Component {
 
     this.routeToLogin = this.routeToLogin.bind(this);
     this.checkStatus = this.checkStatus.bind(this);
+
+    /**
+     * # State
+     *
+     * The app's entire state
+     *
+     * @author Byron Wezvo
+     */
+    this.state = {
+      account_data: {},
+    };
   }
 
   /**
