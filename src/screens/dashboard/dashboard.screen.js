@@ -65,6 +65,7 @@ class Dashboard extends React.Component {
         .then((response) => response.text())
         .then((result) => {
           if (result === 'true') {
+            // TODO : Remove this comment
             console.log('user is online');
           } else {
             // -> If status is set to false take user back to log in page
