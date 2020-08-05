@@ -26,8 +26,6 @@ class Dashboard extends React.Component {
         draggable: true,
         progress: undefined,
       });
-
-      console.log(prettyPayload.company_name);
     }
 
     this.checkStatus();
