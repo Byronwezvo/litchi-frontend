@@ -12,6 +12,7 @@ class Dashboard extends React.Component {
     this.sendPulse = this.sendPulse.bind(this);
     this.saveToSessionStorage = this.saveToSessionStorage.bind(this);
     this.getDataFromSessionStorage = this.getDataFromSessionStorage.bind(this);
+    this.generatePrediction = this.generatePrediction.bind(this);
 
     /**
      * # State
@@ -52,11 +53,34 @@ class Dashboard extends React.Component {
       });
     }
 
+    // -> Testing new code
+    this.generatePrediction();
+
     // -> Call checkStatus
     this.checkStatus();
 
     //  -> Call updatePulse
     this.sendPulse();
+  }
+
+  /**
+   * # Predict Perfect Time for Pulse
+   *
+   * This method will predict the right time to call for a pulse estimating time
+   * the formulae for this function is `(currentTime + 1) === current_pulse_expiry_time`.
+   * if tru then wait for 40 seconds and then send a pulse before the api deletes client off
+   *
+   * @author Byron Wezvo
+   */
+  generatePrediction() {
+    setInterval(() => {
+      // -> Generate date variable calling Date Class
+      const date = new Date();
+
+      // -> get time
+      const minute = date.getMinutes();
+      console.log(minute);
+    }, 5000);
   }
 
   /**
