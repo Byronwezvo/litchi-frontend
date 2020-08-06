@@ -36,10 +36,11 @@ class Dashboard extends React.Component {
       // -> route user to login screen
       this.routeToLogin();
     } else {
+      // -> Log the state to the console
+      console.log(this.state.account_data);
+
       // -> parse json string into json object
       const prettyPayload = JSON.parse(payload);
-
-      console.log(this.state.account_data);
 
       // -> generate a hello notification from company name
       toast.success(`✅ Hello, ${prettyPayload.company_name}`, {
