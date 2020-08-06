@@ -79,7 +79,14 @@ class Dashboard extends React.Component {
 
       // -> get time
       const minute = date.getMinutes();
-      console.log(minute);
+
+      // -> Get payload data from session storage
+      const data = this.getDataFromSessionStorage('payload');
+
+      // -> Mathematics
+      const result = parseInt(minute + 1) == data.current_pulse_expiry_time;
+
+      console.log(result);
     }, 5000);
   }
 
