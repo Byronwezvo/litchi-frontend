@@ -9,9 +9,11 @@ class Dashboard extends React.Component {
 
     this.routeToLogin = this.routeToLogin.bind(this);
     this.checkStatus = this.checkStatus.bind(this);
-    this.savePayloadToState = this.savePayloadToState.bind(this);
-    this.updatePulse = this.updatePulse.bind(this);
-    this.updateAccountData = this.updateAccountData.bind(this);
+    // this.savePayloadToState = this.savePayloadToState.bind(this);
+    this.sendPulse = this.sendPulse.bind(this);
+    // this.updateAccountData = this.updateAccountData.bind(this);
+    this.saveToSessionStorage = this.saveToSessionStorage.bind(this);
+    this.getDataFromSessionStorage = this.getDataFromSessionStorage.bind(this);
 
     /**
      * # State
@@ -34,8 +36,11 @@ class Dashboard extends React.Component {
       // -> route user to login screen
       this.routeToLogin();
     } else {
+      // -> Set state from payload
+      this.savePayloadToState();
+
       // -> Log the state to the console
-      console.log(this.state.account_data);
+      console.log(this.state);
 
       // -> parse json string into json object
       const prettyPayload = JSON.parse(payload);
@@ -53,11 +58,7 @@ class Dashboard extends React.Component {
     }
 
     //  -> Call updatePulse
-    this
-      .updatePulse
-      // this.state.account_data.company_email,
-      // this.state.account_data.current_pulse_id
-      ();
+    this.sendPulse();
 
     // -> Call checkStatus
     this.checkStatus();
@@ -89,35 +90,46 @@ class Dashboard extends React.Component {
       fetch('http://localhost:3300/dashboard/authstatus', requestOptions)
         .then((response) => response.json())
         .then((result) => {
+          // TODO : remove this console log () its repetitive
           console.log(result);
-          if (result.authentication_status === true) {
-            // TODO : restart
-          } else {
-            // -> If status is set to false take user back to log in page
-            this.routeToLogin();
-          }
+
+          // -> save to session storage
+          this.saveToSessionStorage('pulse', result);
+
+          // if (result.authentication_status === true) {
+          //   // TODO : restart
+          // } else {
+          //   // -> If status is set to false take user back to log in page
+          //   this.routeToLogin();
+          // }
         })
         .catch((error) => console.log('error', error));
     }, 5000);
   }
 
   /**
-   * # Update Pulse
+   * # Send Pulse
    *
    * This function will update the pulse in the database using the pulse update
    * route already implemented in the api.
    *
    * @author Byron Wezvo
    */
-  updatePulse(email, pulse_id) {
+  sendPulse() {
     // Basically run this function after 2mins 50 seconds (150,000)
     setInterval(() => {
+      // -> Get data from session storage
+      const data = this.getDataFromSessionStorage('pulse');
+
+      // TODO : remove this console.log its a memory digester
+      console.log(data.current_pulse_id);
+
       const myHeaders = new Headers();
       myHeaders.append('Content-Type', 'application/json');
 
       const raw = JSON.stringify({
-        // company_email: email,
-        // current_pulse_id: pulse_id,
+        company_email: data.company_email,
+        current_pulse_id: data.current_pulse_id,
       });
 
       const requestOptions = {
@@ -152,12 +164,14 @@ class Dashboard extends React.Component {
     this.setState({
       account_data: payload,
     });
+
+    console.log(payload);
   }
 
   /**
    * # Save to Session Storage
    *
-   * this function will save anythings its given to the sessionStorage
+   * This function will save anythings its given to the session storage
    *
    * @author Byron Wezvo
    */
@@ -166,7 +180,19 @@ class Dashboard extends React.Component {
     sessionStorage.removeItem(key);
 
     // -> Save new data to session storage
-    sessionStorage.setItem(`${key}`, JSON.parse(object));
+    sessionStorage.setItem(`${key}`, JSON.stringify(object));
+  }
+
+  /**
+   * # Get data from Session Storage
+   *
+   * This function will return an object with data from the session storage
+   *
+   * @author Byron Wezvo
+   */
+  getDataFromSessionStorage(key) {
+    // -> Save new data to session storage
+    return JSON.parse(sessionStorage.getItem(`${key}`));
   }
 
   /**
