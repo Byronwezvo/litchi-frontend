@@ -9,9 +9,7 @@ class Dashboard extends React.Component {
 
     this.routeToLogin = this.routeToLogin.bind(this);
     this.checkStatus = this.checkStatus.bind(this);
-    // this.savePayloadToState = this.savePayloadToState.bind(this);
     this.sendPulse = this.sendPulse.bind(this);
-    // this.updateAccountData = this.updateAccountData.bind(this);
     this.saveToSessionStorage = this.saveToSessionStorage.bind(this);
     this.getDataFromSessionStorage = this.getDataFromSessionStorage.bind(this);
 
