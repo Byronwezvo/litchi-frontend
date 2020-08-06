@@ -99,12 +99,12 @@ class Dashboard extends React.Component {
             id: result.current_pulse_id,
           });
 
-          // if (result.authentication_status === true) {
-          //   // TODO : restart
-          // } else {
-          //   // -> If status is set to false take user back to log in page
-          //   this.routeToLogin();
-          // }
+          if (result.authentication_status === true) {
+            // TODO : restart
+          } else {
+            // -> If status is set to false take user back to log in page
+            this.routeToLogin();
+          }
         })
         .catch((error) => console.log('error', error));
     }, 120000); // timing (2mins 45 seconds)
