@@ -52,11 +52,11 @@ class Dashboard extends React.Component {
       });
     }
 
-    //  -> Call updatePulse
-    this.sendPulse();
-
     // -> Call checkStatus
     this.checkStatus();
+
+    //  -> Call updatePulse
+    this.sendPulse();
   }
 
   /**
@@ -68,12 +68,17 @@ class Dashboard extends React.Component {
    * @author Byron Wezvo
    */
   checkStatus() {
+    // -> Get data from session storage
+    const data = this.getDataFromSessionStorage('payload');
+
     // -> This code is repetitive
     setInterval(() => {
       const myHeaders = new Headers();
       myHeaders.append('Content-Type', 'application/json');
 
-      const raw = JSON.stringify({ company_email: 'test@test.com' });
+      const raw = JSON.stringify({
+        company_email: data.company_email,
+      });
 
       const requestOptions = {
         method: 'POST',
@@ -86,10 +91,13 @@ class Dashboard extends React.Component {
         .then((response) => response.json())
         .then((result) => {
           // TODO : remove this console log () its repetitive
-          console.log(result);
+          console.log('Auth');
 
           // -> save to session storage
           this.saveToSessionStorage('pulse', result);
+          this.saveToSessionStorage('pulse-id', {
+            id: result.current_pulse_id,
+          });
 
           // if (result.authentication_status === true) {
           //   // TODO : restart
@@ -99,7 +107,7 @@ class Dashboard extends React.Component {
           // }
         })
         .catch((error) => console.log('error', error));
-    }, 5000);
+    }, 165000); // timing (2mins 45 seconds)
   }
 
   /**
@@ -115,16 +123,18 @@ class Dashboard extends React.Component {
     setInterval(() => {
       // -> Get data from session storage
       const data = this.getDataFromSessionStorage('pulse');
+      const pulseID = this.getDataFromSessionStorage('pulse-id');
+      console.log(pulseID);
 
       // TODO : remove this console.log its a memory digester
-      console.log(data.current_pulse_id);
+      console.log('[ Pulse Old ]' + data.current_pulse_id);
 
       const myHeaders = new Headers();
       myHeaders.append('Content-Type', 'application/json');
 
       const raw = JSON.stringify({
         company_email: data.company_email,
-        current_pulse_id: data.current_pulse_id,
+        current_pulse_id: pulseID.id,
       });
 
       const requestOptions = {
@@ -137,10 +147,12 @@ class Dashboard extends React.Component {
       fetch('http://localhost:3300/dashboard/pulse', requestOptions)
         .then((response) => response.json())
         .then((result) => {
-          // TODO : restart
+          // TODO : Save to Session Storage [...]
+          console.log(result);
+          console.log('[ Pulse New ]' + result.current_pulse_id);
         })
         .catch((error) => console.log('error', error));
-    }, 5000);
+    }, 170000); // timing ( 2mins 50seconds)
   }
 
   /**
