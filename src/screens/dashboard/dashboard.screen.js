@@ -18,9 +18,11 @@ class Dashboard extends React.Component {
      *
      * @author Byron Wezvo
      */
-    this.state = {
-      account_data: {},
-    };
+    this.state = {};
+  }
+
+  componentWillMount() {
+    this.savePayloadToState();
   }
 
   componentDidMount() {
@@ -35,8 +37,7 @@ class Dashboard extends React.Component {
       // -> parse json string into json object
       const prettyPayload = JSON.parse(payload);
 
-      // -> Add payload data to state
-      this.savePayloadToState(prettyPayload);
+      console.log(this.state.account_data);
 
       // -> generate a hello notification from company name
       toast.success(`✅ Hello, ${prettyPayload.company_name}`, {
@@ -132,7 +133,11 @@ class Dashboard extends React.Component {
    *
    * @author Byron Wezvo
    */
-  savePayloadToState(payload) {
+  savePayloadToState() {
+    // -> Get data from payload session object
+    const payload = sessionStorage.getItem('payload');
+
+    // -> set new state from the payload object
     this.setState({
       account_data: payload,
     });
