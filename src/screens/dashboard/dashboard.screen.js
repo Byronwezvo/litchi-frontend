@@ -34,9 +34,6 @@ class Dashboard extends React.Component {
       // -> route user to login screen
       this.routeToLogin();
     } else {
-      // -> Set state from payload
-      this.savePayloadToState();
-
       // -> Log the state to the console
       console.log(this.state);
 
