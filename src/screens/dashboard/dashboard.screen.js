@@ -135,7 +135,7 @@ class Dashboard extends React.Component {
    */
   savePayloadToState() {
     // -> Get data from payload session object
-    const payload = sessionStorage.getItem('payload');
+    const payload = JSON.parse(sessionStorage.getItem('payload'));
 
     // -> set new state from the payload object
     this.setState({
