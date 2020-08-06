@@ -12,7 +12,6 @@ class Dashboard extends React.Component {
     this.sendPulse = this.sendPulse.bind(this);
     this.saveToSessionStorage = this.saveToSessionStorage.bind(this);
     this.getDataFromSessionStorage = this.getDataFromSessionStorage.bind(this);
-    this.generatePrediction = this.generatePrediction.bind(this);
 
     /**
      * # State
@@ -58,48 +57,9 @@ class Dashboard extends React.Component {
 
     // -> Call checkStatus
     this.checkStatus();
-  }
 
-  /**
-   * # Predict Perfect Time for Pulse
-   *
-   * This method will predict the right time to call for a pulse estimating time
-   * the formulae for this function is `(currentTime + 1) === current_pulse_expiry_time`.
-   * if tru then wait for 40 seconds and then send a pulse before the api deletes client off
-   *
-   * @author Byron Wezvo
-   */
-  generatePrediction() {
-    setInterval(() => {
-      // -> Generate date variable calling Date Class
-      const date = new Date();
-
-      // -> get time
-      const minute = date.getMinutes();
-
-      // -> Get payload data from session storage
-      const data = this.getDataFromSessionStorage('payload');
-
-      // -> Mathematics
-      const result = parseInt(minute + 1) === data.current_pulse_expiry_time;
-
-      switch (result) {
-        case true:
-          //  -> Call updatePulse
-          this.sendPulse();
-          break;
-
-        case false:
-          // Do Nothing
-          break;
-
-        default:
-          // Do Nothing
-          break;
-      }
-
-      console.log(result);
-    }, 5000);
+    // -> Call update pulse
+    this.sendPulse();
   }
 
   /**
@@ -191,11 +151,11 @@ class Dashboard extends React.Component {
         .then((response) => response.json())
         .then((result) => {
           // TODO : Save to Session Storage [...]
-          console.log(result);
+          // console.log(result);
           console.log('[ Pulse New ]' + result.current_pulse_id);
         })
         .catch((error) => console.log('error', error));
-    }, 45000); // timing ( 2mins 50seconds)
+    }, 80000); // timing ( 2mins 50seconds)
   }
 
   /**
