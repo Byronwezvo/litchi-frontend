@@ -18,7 +18,9 @@ class Dashboard extends React.Component {
      *
      * @author Byron Wezvo
      */
-    this.state = {};
+    this.state = {
+      // -> Ghost Property account_data : {}
+    };
   }
 
   componentWillMount() {
