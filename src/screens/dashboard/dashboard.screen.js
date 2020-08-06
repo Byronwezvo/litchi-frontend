@@ -135,7 +135,15 @@ class Dashboard extends React.Component {
       };
 
       fetch('http://localhost:3300/dashboard/pulse', requestOptions)
-        .then((response) => response.json())
+        .then((response) => {
+          if (response.status === 401) {
+            // -> route user back to login
+            this.routeToLogin();
+          } else {
+            // -> parse
+            response.json();
+          }
+        })
         .then((result) => {
           // Do nothing
         })
