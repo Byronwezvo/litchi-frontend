@@ -149,26 +149,6 @@ class Dashboard extends React.Component {
   }
 
   /**
-   * # Save Payload to State
-   *
-   * This function will take payload and basically set it into state under
-   * `account data`.
-   *
-   * @author Byron Wezvo
-   */
-  savePayloadToState() {
-    // -> Get data from payload session object
-    const payload = JSON.parse(sessionStorage.getItem('payload'));
-
-    // -> set new state from the payload object
-    this.setState({
-      account_data: payload,
-    });
-
-    console.log(payload);
-  }
-
-  /**
    * # Save to Session Storage
    *
    * This function will save anythings its given to the session storage
