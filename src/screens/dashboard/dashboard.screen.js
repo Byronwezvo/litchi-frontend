@@ -52,9 +52,6 @@ class Dashboard extends React.Component {
       });
     }
 
-    // -> Testing new code
-    this.generatePrediction();
-
     // -> Call checkStatus
     this.checkStatus();
 
@@ -94,7 +91,7 @@ class Dashboard extends React.Component {
         .then((response) => response.json())
         .then((result) => {
           // TODO : remove this console log () its repetitive
-          console.log('Auth');
+          // console.log('Auth');
 
           // -> save to session storage
           this.saveToSessionStorage('pulse', result);
@@ -155,7 +152,7 @@ class Dashboard extends React.Component {
           console.log('[ Pulse New ]' + result.current_pulse_id);
         })
         .catch((error) => console.log('error', error));
-    }, 80000); // timing ( 2mins 50seconds)
+    }, 8000); // timing ( 2mins 50seconds)
   }
 
   /**
