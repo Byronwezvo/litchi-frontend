@@ -34,9 +34,6 @@ class Dashboard extends React.Component {
       // -> route user to login screen
       this.routeToLogin();
     } else {
-      // -> Log the state to the console
-      console.log(this.state);
-
       // -> parse json string into json object
       const prettyPayload = JSON.parse(payload);
 
@@ -90,9 +87,6 @@ class Dashboard extends React.Component {
       fetch('http://localhost:3300/dashboard/authstatus', requestOptions)
         .then((response) => response.json())
         .then((result) => {
-          // TODO : remove this console log () its repetitive
-          console.log(result.authentication_status);
-
           // -> save to session storage
           this.saveToSessionStorage('pulse', result);
           this.saveToSessionStorage('pulse-id', {
@@ -124,10 +118,6 @@ class Dashboard extends React.Component {
       // -> Get data from session storage
       const data = this.getDataFromSessionStorage('pulse');
       const pulseID = this.getDataFromSessionStorage('pulse-id');
-      console.log(pulseID);
-
-      // TODO : remove this console.log its a memory digester
-      console.log('[ Pulse Old ]' + data.current_pulse_id);
 
       const myHeaders = new Headers();
       myHeaders.append('Content-Type', 'application/json');
@@ -147,9 +137,7 @@ class Dashboard extends React.Component {
       fetch('http://localhost:3300/dashboard/pulse', requestOptions)
         .then((response) => response.json())
         .then((result) => {
-          // TODO : Save to Session Storage [...]
-          console.log(result);
-          console.log('[ Pulse New ]' + result.current_pulse_id);
+          // Do nothing
         })
         .catch((error) => console.log('error', error));
     }, 125000); // timing ( 2mins 50seconds)
