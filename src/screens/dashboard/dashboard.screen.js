@@ -10,6 +10,7 @@ class Dashboard extends React.Component {
     this.routeToLogin = this.routeToLogin.bind(this);
     this.checkStatus = this.checkStatus.bind(this);
     this.savePayloadToState = this.savePayloadToState.bind(this);
+    this.updatePulse = this.updatePulse.bind(this);
 
     /**
      * # State
@@ -54,6 +55,13 @@ class Dashboard extends React.Component {
       });
     }
 
+    //  -> Call updatePulse
+    this.updatePulse(
+      this.state.account_data.company_email,
+      this.state.account_data.current_pulse_id
+    );
+
+    // -> Call checkStatus
     this.checkStatus();
   }
 
@@ -81,11 +89,13 @@ class Dashboard extends React.Component {
       };
 
       fetch('http://localhost:3300/dashboard/authstatus', requestOptions)
-        .then((response) => response.text())
+        .then((response) => response.json())
         .then((result) => {
-          if (result === 'true') {
+          if (result.authentication_status === true) {
             // TODO : Remove this comment
             console.log('user is online');
+            console.log(result);
+            // -> update the state
           } else {
             // -> If status is set to false take user back to log in page
             this.routeToLogin();
@@ -103,15 +113,15 @@ class Dashboard extends React.Component {
    *
    * @author Byron Wezvo
    */
-  updatePulse() {
+  updatePulse(email, pulse_id) {
     // Basically run this function after 2mins 50 seconds (150,000)
     setInterval(() => {
       const myHeaders = new Headers();
       myHeaders.append('Content-Type', 'application/json');
 
       const raw = JSON.stringify({
-        company_email: 'test@test.com',
-        current_pulse_id: '11f7d2c6-9565-4a1d-ba67-4ce6bc80a4b2',
+        company_email: email,
+        current_pulse_id: pulse_id,
       });
 
       const requestOptions = {
@@ -122,10 +132,13 @@ class Dashboard extends React.Component {
       };
 
       fetch('http://localhost:3300/dashboard/pulse', requestOptions)
-        .then((response) => response.text())
-        .then((result) => console.log(result))
+        .then((response) => response.json())
+        .then((result) => {
+          // -> Change state for the next pulse to use
+          console.log(result.current_pulse_id);
+        })
         .catch((error) => console.log('error', error));
-    }, 150000);
+    }, 5000);
   }
 
   /**
