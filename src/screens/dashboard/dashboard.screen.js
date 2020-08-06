@@ -11,6 +11,7 @@ class Dashboard extends React.Component {
     this.checkStatus = this.checkStatus.bind(this);
     this.savePayloadToState = this.savePayloadToState.bind(this);
     this.updatePulse = this.updatePulse.bind(this);
+    this.updateAccountData = this.updateAccountData.bind(this);
 
     /**
      * # State
@@ -22,10 +23,6 @@ class Dashboard extends React.Component {
     this.state = {
       // -> Ghost Property account_data : {}
     };
-  }
-
-  componentWillMount() {
-    this.savePayloadToState();
   }
 
   componentDidMount() {
@@ -56,10 +53,11 @@ class Dashboard extends React.Component {
     }
 
     //  -> Call updatePulse
-    this.updatePulse(
-      this.state.account_data.company_email,
-      this.state.account_data.current_pulse_id
-    );
+    this
+      .updatePulse
+      // this.state.account_data.company_email,
+      // this.state.account_data.current_pulse_id
+      ();
 
     // -> Call checkStatus
     this.checkStatus();
@@ -91,18 +89,16 @@ class Dashboard extends React.Component {
       fetch('http://localhost:3300/dashboard/authstatus', requestOptions)
         .then((response) => response.json())
         .then((result) => {
+          console.log(result);
           if (result.authentication_status === true) {
-            // TODO : Remove this comment
-            console.log('user is online');
-            console.log(result);
-            // -> update the state
+            // TODO : restart
           } else {
             // -> If status is set to false take user back to log in page
             this.routeToLogin();
           }
         })
         .catch((error) => console.log('error', error));
-    }, 3000);
+    }, 5000);
   }
 
   /**
@@ -120,8 +116,8 @@ class Dashboard extends React.Component {
       myHeaders.append('Content-Type', 'application/json');
 
       const raw = JSON.stringify({
-        company_email: email,
-        current_pulse_id: pulse_id,
+        // company_email: email,
+        // current_pulse_id: pulse_id,
       });
 
       const requestOptions = {
@@ -134,8 +130,7 @@ class Dashboard extends React.Component {
       fetch('http://localhost:3300/dashboard/pulse', requestOptions)
         .then((response) => response.json())
         .then((result) => {
-          // -> Change state for the next pulse to use
-          console.log(result.current_pulse_id);
+          // TODO : restart
         })
         .catch((error) => console.log('error', error));
     }, 5000);
@@ -157,6 +152,21 @@ class Dashboard extends React.Component {
     this.setState({
       account_data: payload,
     });
+  }
+
+  /**
+   * # Save to Session Storage
+   *
+   * this function will save anythings its given to the sessionStorage
+   *
+   * @author Byron Wezvo
+   */
+  saveToSessionStorage(key, object) {
+    // -> First delete the data from key and create a new one
+    sessionStorage.removeItem(key);
+
+    // -> Save new data to session storage
+    sessionStorage.setItem(`${key}`, JSON.parse(object));
   }
 
   /**
