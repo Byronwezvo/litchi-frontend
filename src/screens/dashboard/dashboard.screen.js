@@ -58,9 +58,6 @@ class Dashboard extends React.Component {
 
     // -> Call checkStatus
     this.checkStatus();
-
-    //  -> Call updatePulse
-    this.sendPulse();
   }
 
   /**
@@ -84,7 +81,22 @@ class Dashboard extends React.Component {
       const data = this.getDataFromSessionStorage('payload');
 
       // -> Mathematics
-      const result = parseInt(minute + 1) == data.current_pulse_expiry_time;
+      const result = parseInt(minute + 1) === data.current_pulse_expiry_time;
+
+      switch (result) {
+        case true:
+          //  -> Call updatePulse
+          this.sendPulse();
+          break;
+
+        case false:
+          // Do Nothing
+          break;
+
+        default:
+          // Do Nothing
+          break;
+      }
 
       console.log(result);
     }, 5000);
@@ -138,7 +150,7 @@ class Dashboard extends React.Component {
           // }
         })
         .catch((error) => console.log('error', error));
-    }, 165000); // timing (2mins 45 seconds)
+    }, 5000); // timing (2mins 45 seconds)
   }
 
   /**
@@ -151,7 +163,7 @@ class Dashboard extends React.Component {
    */
   sendPulse() {
     // Basically run this function after 2mins 50 seconds (150,000)
-    setInterval(() => {
+    setTimeout(() => {
       // -> Get data from session storage
       const data = this.getDataFromSessionStorage('pulse');
       const pulseID = this.getDataFromSessionStorage('pulse-id');
@@ -183,7 +195,7 @@ class Dashboard extends React.Component {
           console.log('[ Pulse New ]' + result.current_pulse_id);
         })
         .catch((error) => console.log('error', error));
-    }, 170000); // timing ( 2mins 50seconds)
+    }, 45000); // timing ( 2mins 50seconds)
   }
 
   /**
