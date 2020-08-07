@@ -10,7 +10,6 @@ class Dashboard extends React.Component {
     this.routeToLogin = this.routeToLogin.bind(this);
     this.checkStatus = this.checkStatus.bind(this);
     this.sendPulse = this.sendPulse.bind(this);
-    this.saveToSessionStorage = this.saveToSessionStorage.bind(this);
     this.getDataFromSessionStorage = this.getDataFromSessionStorage.bind(this);
     this.savePayloadToState = this.savePayloadToState.bind(this);
 
@@ -93,12 +92,6 @@ class Dashboard extends React.Component {
       fetch('http://localhost:3300/dashboard/authstatus', requestOptions)
         .then((response) => response.json())
         .then((result) => {
-          // -> save to session storage
-          this.saveToSessionStorage('pulse', result);
-          this.saveToSessionStorage('pulse-id', {
-            id: result.current_pulse_id,
-          });
-
           // -> Update state
           this.savePayloadToState(result);
 
@@ -124,11 +117,6 @@ class Dashboard extends React.Component {
   sendPulse() {
     // Basically run this function after 2mins 50 seconds (150,000)
     setInterval(() => {
-      // -> Get data from session storage
-      const data = this.getDataFromSessionStorage('pulse');
-      // -> TODO : Get this data from state
-      const pulseID = this.getDataFromSessionStorage('pulse-id');
-
       const myHeaders = new Headers();
       myHeaders.append('Content-Type', 'application/json');
 
@@ -168,13 +156,13 @@ class Dashboard extends React.Component {
    *
    * @author Byron Wezvo
    */
-  saveToSessionStorage(key, object) {
-    // -> First delete the data from key and create a new one
-    sessionStorage.removeItem(key);
+  // saveToSessionStorage(key, object) {
+  //   // -> First delete the data from key and create a new one
+  //   sessionStorage.removeItem(key);
 
-    // -> Save new data to session storage
-    sessionStorage.setItem(`${key}`, JSON.stringify(object));
-  }
+  //   // -> Save new data to session storage
+  //   sessionStorage.setItem(`${key}`, JSON.stringify(object));
+  // }
 
   /**
    * # Get data from Session Storage
@@ -209,11 +197,14 @@ class Dashboard extends React.Component {
    * @author Byron Wezvo
    */
   savePayloadToState(payload) {
+    // -> Set state after 1 second delay
     setTimeout(() => {
       this.setState({
         account_data: payload,
       });
       console.log(this.state.account_data);
+      // -> Clean payload after
+      sessionStorage.removeItem('payload');
     }, 1000);
   }
 
