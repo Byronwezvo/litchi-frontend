@@ -12,6 +12,7 @@ class Dashboard extends React.Component {
     this.sendPulse = this.sendPulse.bind(this);
     this.saveToSessionStorage = this.saveToSessionStorage.bind(this);
     this.getDataFromSessionStorage = this.getDataFromSessionStorage.bind(this);
+    this.savePayloadToState = this.savePayloadToState.bind(this);
 
     /**
      * # State
@@ -22,10 +23,14 @@ class Dashboard extends React.Component {
      */
     this.state = {
       send_pulse: false,
+      account_data: 'not changed',
     };
   }
 
   componentDidMount() {
+    // -> Save payload to state
+    this.savePayloadToState();
+
     // -> Try find data stored in Session storage
     const payload = sessionStorage.getItem('payload');
 
@@ -36,6 +41,9 @@ class Dashboard extends React.Component {
     } else {
       // -> parse json string into json object
       const prettyPayload = JSON.parse(payload);
+
+      // -> remove pulse payload
+      // sessionStorage.removeItem('payload');
 
       // -> generate a hello notification from company name
       toast.success(`✅ Hello, ${prettyPayload.company_name}`, {
@@ -66,6 +74,7 @@ class Dashboard extends React.Component {
    */
   checkStatus() {
     // -> Get data from session storage
+    // TODO : get data from state
     const data = this.getDataFromSessionStorage('payload');
 
     // -> This code is repetitive
@@ -117,6 +126,7 @@ class Dashboard extends React.Component {
     setInterval(() => {
       // -> Get data from session storage
       const data = this.getDataFromSessionStorage('pulse');
+      // -> TODO : Get this data from state
       const pulseID = this.getDataFromSessionStorage('pulse-id');
 
       const myHeaders = new Headers();
@@ -188,6 +198,17 @@ class Dashboard extends React.Component {
    */
   routeToLogin() {
     window.location = '/login';
+  }
+
+  /**
+   * # Set state
+   * @author Byron Wezvo
+   */
+  savePayloadToState() {
+    this.setState({
+      account_data: 'hie',
+    });
+    console.log(this.state.account_data);
   }
 
   render() {
