@@ -52,7 +52,7 @@ class Dashboard extends React.Component {
     // -> Call checkStatus
     this.checkStatus();
 
-    //
+    // -> Call sendPulse
     this.sendPulse();
   }
 
