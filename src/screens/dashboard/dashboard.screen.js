@@ -22,6 +22,7 @@ class Dashboard extends React.Component {
      */
     this.state = {
       send_pulse: false,
+      account_data: {},
     };
   }
 
