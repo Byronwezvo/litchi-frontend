@@ -80,7 +80,7 @@ class Dashboard extends React.Component {
       myHeaders.append('Content-Type', 'application/json');
 
       const raw = JSON.stringify({
-        company_email: data.company_email,
+        company_email: this.state.account_data.company_email,
       });
 
       const requestOptions = {
@@ -98,6 +98,9 @@ class Dashboard extends React.Component {
           this.saveToSessionStorage('pulse-id', {
             id: result.current_pulse_id,
           });
+
+          // -> Update state
+          this.savePayloadToState(result);
 
           if (result.authentication_status === true) {
             // TODO : restart
