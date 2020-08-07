@@ -133,8 +133,8 @@ class Dashboard extends React.Component {
       myHeaders.append('Content-Type', 'application/json');
 
       const raw = JSON.stringify({
-        company_email: data.company_email,
-        current_pulse_id: pulseID.id,
+        company_email: this.state.account_data.company_email,
+        current_pulse_id: this.state.account_data.current_pulse_id,
       });
 
       const requestOptions = {
