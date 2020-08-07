@@ -28,9 +28,6 @@ class Dashboard extends React.Component {
   }
 
   componentDidMount() {
-    // -> Save payload to state
-    this.savePayloadToState();
-
     // -> Try find data stored in Session storage
     const payload = sessionStorage.getItem('payload');
 
@@ -42,8 +39,8 @@ class Dashboard extends React.Component {
       // -> parse json string into json object
       const prettyPayload = JSON.parse(payload);
 
-      // -> remove pulse payload
-      // sessionStorage.removeItem('payload');
+      // -> Save payload to state
+      this.savePayloadToState(prettyPayload);
 
       // -> generate a hello notification from company name
       toast.success(`✅ Hello, ${prettyPayload.company_name}`, {
@@ -202,13 +199,19 @@ class Dashboard extends React.Component {
 
   /**
    * # Set state
+   *
+   * This method will delay for about 3 seconds or so and then update the state while deleting data
+   * that exist in the session storage quickly
+   *
    * @author Byron Wezvo
    */
-  savePayloadToState() {
-    this.setState({
-      account_data: 'hie',
-    });
-    console.log(this.state.account_data);
+  savePayloadToState(payload) {
+    setTimeout(() => {
+      this.setState({
+        account_data: payload,
+      });
+      console.log(this.state.account_data);
+    }, 1000);
   }
 
   render() {
