@@ -38,6 +38,9 @@ class Dashboard extends React.Component {
       // -> parse json string into json object
       const prettyPayload = JSON.parse(payload);
 
+      // -> remove pulse payload
+      sessionStorage.removeItem('payload');
+
       // -> generate a hello notification from company name
       toast.success(`✅ Hello, ${prettyPayload.company_name}`, {
         position: 'top-center',
