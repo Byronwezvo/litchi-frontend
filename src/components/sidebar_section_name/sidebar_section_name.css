@@ -1,11 +1,11 @@
 .section-name {
-  padding-top: 1em;
-  color: white;
+  color: #121420;
   font-family: 'Geosands';
   letter-spacing: 2px;
   opacity: 0.8;
   font-size: 1em;
   font-weight: 700;
+  padding: 1em;
 }
 
 .section-icon {
