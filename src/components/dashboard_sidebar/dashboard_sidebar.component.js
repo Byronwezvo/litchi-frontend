@@ -20,6 +20,11 @@ function DashboardSidedrawer() {
         <SidebarLink name="Closed Applications" icon="icofont-delete-alt" />
 
         <div class="section-divider"></div>
+
+        <SidebarSectionName name="Clients" />
+        <SidebarLink name="Client List" icon="icofont-ui-user" />
+
+        <div class="section-divider"></div>
       </div>
     </div>
   );
