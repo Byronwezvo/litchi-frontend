@@ -46,10 +46,10 @@ class Dashboard extends React.Component {
       this.savePayloadToState(prettyPayload);
 
       // -> generate a hello notification from company name
-      toast.success(`✅ Hello, ${prettyPayload.company_name}`, {
+      toast(`✅ Hello, ${prettyPayload.company_name}`, {
         position: 'top-center',
         autoClose: 5000,
-        hideProgressBar: false,
+        hideProgressBar: true,
         closeOnClick: true,
         pauseOnHover: true,
         draggable: true,
