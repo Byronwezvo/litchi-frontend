@@ -2,7 +2,7 @@
   color: white;
   padding-top: 0.3em;
   padding-bottom: 0.3em;
-  padding-left: 0.2em;
+  padding: 0.3em 1.2em;
 }
 
 .side_bar-link {
@@ -14,18 +14,24 @@
   font-family: 'Raleway';
   letter-spacing: 1px;
   font-size: 0.8em;
-  color: white;
+  color: #121420;
+  opacity: 1;
 }
 
 .section-divider {
   min-height: 2px;
   max-height: 2px;
   border-radius: 100px;
-  background-color: black;
-  opacity: 0.5;
+  margin: 0em 2em;
+  background-color: #121420;
+  opacity: 0.1;
 }
 
 .sidebar-link-icon {
-  color: white;
-  padding-right: 0.8em;
+  color: #121420;
+  padding-right: 0.9em;
+}
+
+.active {
+  background-color: #12142034;
 }
