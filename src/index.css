@@ -37,6 +37,11 @@ body {
   src: url('./utils/fonts/Raleway/static/Raleway-Regular.ttf');
 }
 
+@font-face {
+  font-family: 'Montserrat';
+  src: url('./utils/fonts/Montserrat/Montserrat-Regular.ttf');
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -55,7 +60,7 @@ code {
 }
 
 .Toastify__toast-body {
-  font-family: 'Caviar Dream Bold';
+  font-family: 'Montserrat';
 }
 
 body::-webkit-scrollbar {

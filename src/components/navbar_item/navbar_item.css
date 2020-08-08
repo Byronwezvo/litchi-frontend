@@ -1,5 +1,7 @@
 .navbar-item-text {
   color: #121420;
-  font-family: 'Caviar Dream Bold';
-  opacity: 0.8;
+  font-family: 'Montserrat';
+  font-size: 0.9em;
+  font-weight: 600;
+  opacity: 0.6;
 }
