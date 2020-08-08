@@ -3,7 +3,7 @@ import { toast } from 'react-toastify';
 
 import DashboardHeader from '../../components/dashboard_header/dashboard_header.component';
 import './dashboard.css';
-import DashboardSidedrawer from '../../components/dashboard_sidedrawer/dashboard_sidedrawer.component';
+import DashboardSidedrawer from '../../components/dashboard_sidebar/dashboard_sidebar.component';
 import Footer from '../../components/footer/footer.component';
 
 class Dashboard extends React.Component {
