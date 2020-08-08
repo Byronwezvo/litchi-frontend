@@ -2,8 +2,9 @@
   padding-top: 10px;
 }
 .help-messages-wrapper .help-message {
-  font-family: 'Caviar Dream Bold';
-  font-size: 1.1em;
+  font-family: 'Montserrat';
+  font-weight: 600;
+  font-size: 0.9em;
   color: #121420;
   opacity: 0.5;
 }
