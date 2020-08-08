@@ -25,6 +25,10 @@ function DashboardSidedrawer() {
         <SidebarLink name="Client List" icon="icofont-ui-user" />
 
         <div class="section-divider"></div>
+
+        <SidebarSectionName name="Loan Status" />
+        <SidebarLink name="Overdue" icon="icofont-exclamation-circle" />
+        <SidebarLink name="Fully-paid" icon="icofont-tick-boxed" />
       </div>
     </div>
   );
