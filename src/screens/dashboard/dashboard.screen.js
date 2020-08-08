@@ -71,7 +71,7 @@ class Dashboard extends React.Component {
   checkStatus() {
     // -> Get data from session storage
     // TODO : get data from state
-    const data = this.getDataFromSessionStorage('payload');
+    // const data = this.getDataFromSessionStorage('payload');
 
     // -> This code is repetitive
     setInterval(() => {
