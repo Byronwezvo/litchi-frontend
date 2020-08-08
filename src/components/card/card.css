@@ -1,0 +1,43 @@
+.dashboard-card-1 {
+  background-color: #121420;
+  border-radius: 3px;
+  opacity: 0.6;
+  padding: 1.5em;
+}
+
+.dashboard-card-2 {
+  background-color: #121420;
+  border-radius: 3px;
+  opacity: 0.6;
+  padding: 1.5em;
+}
+
+.dashboard-card-3 {
+  background-color: #121420;
+  border-radius: 3px;
+  opacity: 0.6;
+  padding: 1.5em;
+}
+
+.dashboard-card-4 {
+  background-color: #121420;
+  border-radius: 3px;
+  opacity: 0.6;
+  padding: 1.5em;
+}
+
+.dashboard-card-heading {
+  font-family: 'Caviar Dream';
+  font-size: 1.1em;
+  color: white;
+}
+
+.dashboard-card-icon {
+  padding-right: 0.5em;
+}
+
+.dashboard-card-subtitle {
+  font-family: 'Caviar Dream';
+  color: white;
+  padding-top: 20px;
+}

@@ -1,16 +1,17 @@
 import React from 'react';
+import './card.css';
 
-function Card() {
+function Card({ heading, subtitle, icon }) {
   return (
     <div class="col-sm">
       <div className="dashboard-card">
         <div className="dashboard-card-heading text-center">
           <span className="dashboard-card-icon">
-            <i class="icofont-envelope"></i>
+            <i class={icon}></i>
           </span>
-          New Applications
+          {heading}
         </div>
-        <div className="text-center">28</div>
+        <div className="dashboard-card-subtitle text-center">{subtitle}</div>
       </div>
     </div>
   );
