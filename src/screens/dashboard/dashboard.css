@@ -1,5 +1,8 @@
 .dashboard-page-warper {
-  background-color: blue;
-  padding-left: 1em;
-  padding-right: 1em;
+  margin-top: 3rem;
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+.side-drawer {
 }

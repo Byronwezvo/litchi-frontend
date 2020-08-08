@@ -214,10 +214,10 @@ class Dashboard extends React.Component {
   render() {
     return (
       <div>
-        {/* <DashboardHeader /> */}
+        <DashboardHeader />
         <div className="dashboard-page-warper">
           <div className="row">
-            <div className="col-sm-2">col-4</div>
+            <div className="col-sm-2 side-drawer">working</div>
             <div className="col-sm-10">col-8</div>
           </div>
         </div>
