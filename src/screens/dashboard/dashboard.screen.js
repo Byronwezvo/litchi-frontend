@@ -2,6 +2,7 @@ import React from 'react';
 import { toast } from 'react-toastify';
 
 import DashboardHeader from '../../components/dashboard_header/dashboard_header.component';
+import './dashboard.css';
 
 class Dashboard extends React.Component {
   constructor(props) {
@@ -99,7 +100,8 @@ class Dashboard extends React.Component {
             // TODO : restart
           } else {
             // -> If status is set to false take user back to log in page
-            this.routeToLogin();
+            // TODO : reset this back
+            // this.routeToLogin();
           }
         })
         .catch((error) => console.log('error', error));
@@ -204,17 +206,20 @@ class Dashboard extends React.Component {
       });
       console.log(this.state.account_data);
       // -> Clean payload after
-      sessionStorage.removeItem('payload');
+      // TODO : Reset this back
+      // sessionStorage.removeItem('payload');
     }, 1000);
   }
 
   render() {
     return (
       <div>
-        <DashboardHeader />
-
-        <div className="container page-wrapper">
-          <h1>Dashboard</h1>
+        {/* <DashboardHeader /> */}
+        <div className="dashboard-page-warper">
+          <div className="row">
+            <div className="col-sm-2">col-4</div>
+            <div className="col-sm-10">col-8</div>
+          </div>
         </div>
       </div>
     );
