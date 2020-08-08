@@ -1,4 +1,5 @@
 import React from 'react';
+import Card from '../card/card.component';
 
 function HomeCardSection() {
   return (
@@ -6,17 +7,7 @@ function HomeCardSection() {
       <div class="container">
         <div class="row">
           {/* TODO : move this code to a component */}
-          <div class="col-sm">
-            <div className="dashboard-card">
-              <div className="dashboard-card-heading text-center">
-                <span className="dashboard-card-icon">
-                  <i class="icofont-envelope"></i>
-                </span>
-                New Applications
-              </div>
-              <div className="text-center">28</div>
-            </div>
-          </div>
+          <Card />
           <div class="col-sm">One of three columns</div>
           <div class="col-sm">One of three columns</div>
           <div class="col-sm">One of three columns</div>
