@@ -6,12 +6,12 @@
 }
 
 .side_bar-link {
-  opacity: 0.6;
+  opacity: 0.8;
 }
 
 .side_bar-link-text {
-  font-family: 'Geosands';
-  letter-spacing: 2px;
+  font-family: 'Caviar Dream';
+  font-size: 0.8em;
   color: white;
 }
 
