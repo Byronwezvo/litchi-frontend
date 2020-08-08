@@ -1,5 +1,11 @@
 .section-name {
   color: white;
-  font-family: 'Caviar Dream';
-  font-size: 1.3em;
+  font-family: 'Geosands';
+  letter-spacing: 2px;
+  opacity: 0.8;
+  font-size: 1em;
+}
+
+.section-icon {
+  padding-right: 10px;
 }
