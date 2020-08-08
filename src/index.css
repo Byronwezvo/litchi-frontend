@@ -32,6 +32,11 @@ body {
   src: url('./utils/fonts/caviar-dreams/Caviar Dreams Bold.ttf');
 }
 
+@font-face {
+  font-family: 'Raleway';
+  src: url('./utils/fonts/Raleway/static/Raleway-Regular.ttf');
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

@@ -6,11 +6,13 @@
 }
 
 .side_bar-link {
+  padding: 0.5em;
   opacity: 0.8;
 }
 
 .side_bar-link-text {
-  font-family: 'Caviar Dream';
+  font-family: 'Raleway';
+  letter-spacing: 1px;
   font-size: 0.8em;
   color: white;
 }
@@ -25,5 +27,5 @@
 
 .sidebar-link-icon {
   color: white;
-  padding-right: 0.5em;
+  padding-right: 0.8em;
 }
