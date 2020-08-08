@@ -31,17 +31,18 @@
 }
 
 .dashboard-card-heading {
-  font-family: 'Caviar Dream';
-  font-size: 1.1em;
+  font-family: 'Montserrat';
+  font-size: 1em;
   color: white;
 }
 
 .dashboard-card-icon {
   padding-right: 0.5em;
+  font-size: 1.3em;
 }
 
 .dashboard-card-subtitle {
-  font-family: 'Caviar Dream';
+  font-family: 'Montserrat';
   color: white;
   padding-top: 20px;
 }
