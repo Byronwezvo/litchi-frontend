@@ -4,6 +4,7 @@ import { toast } from 'react-toastify';
 import DashboardHeader from '../../components/dashboard_header/dashboard_header.component';
 import './dashboard.css';
 import DashboardSidedrawer from '../../components/dashboard_sidedrawer/dashboard_sidedrawer.component';
+import Footer from '../../components/footer/footer.component';
 
 class Dashboard extends React.Component {
   constructor(props) {
@@ -219,7 +220,7 @@ class Dashboard extends React.Component {
         <div className="dashboard-page-warper">
           <div className="row">
             <DashboardSidedrawer />
-            <div className="col-sm-10">col-8</div>
+            <div className="col-sm-10 overflow-auto">col-8</div>
           </div>
         </div>
       </div>
