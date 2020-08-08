@@ -1,10 +1,10 @@
 import React from 'react';
 import './card.css';
 
-function Card({ heading, subtitle, icon }) {
+function Card({ cardClassName, heading, subtitle, icon }) {
   return (
     <div class="col-sm">
-      <div className="dashboard-card">
+      <div className={cardClassName}>
         <div className="dashboard-card-heading text-center">
           <span className="dashboard-card-icon">
             <i class={icon}></i>

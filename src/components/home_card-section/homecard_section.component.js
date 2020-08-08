@@ -6,11 +6,30 @@ function HomeCardSection() {
     <div class="overflow-auto p-3 mb-3 mb-md-0 mr-md-3">
       <div class="container">
         <div class="row">
-          {/* TODO : move this code to a component */}
-          <Card />
-          <div class="col-sm">One of three columns</div>
-          <div class="col-sm">One of three columns</div>
-          <div class="col-sm">One of three columns</div>
+          <Card
+            cardClassName="dashboard-card-1"
+            heading="New Applicants"
+            icon="icofont-envelope"
+            subtitle="20"
+          />
+          <Card
+            cardClassName="dashboard-card-2"
+            heading="Total Clients"
+            icon="icofont-envelope"
+            subtitle="20"
+          />
+          <Card
+            cardClassName="dashboard-card-3"
+            heading="Overdue Loans"
+            icon="icofont-envelope"
+            subtitle="20"
+          />
+          <Card
+            cardClassName="dashboard-card-4"
+            heading="Expiry Date"
+            icon="icofont-envelope"
+            subtitle="20"
+          />
         </div>
       </div>
     </div>
