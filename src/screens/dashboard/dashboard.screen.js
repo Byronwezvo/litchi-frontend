@@ -5,6 +5,7 @@ import DashboardHeader from '../../components/dashboard_header/dashboard_header.
 import './dashboard.css';
 import DashboardSidedrawer from '../../components/dashboard_sidebar/dashboard_sidebar.component';
 import Footer from '../../components/footer/footer.component';
+import Home from '../../dashboard_views/home_view/home.view';
 
 class Dashboard extends React.Component {
   constructor(props) {
@@ -220,7 +221,7 @@ class Dashboard extends React.Component {
         <div className="dashboard-page-warper">
           <div className="row">
             <DashboardSidedrawer />
-            <div className="col-sm-10 overflow-auto">col-8</div>
+            <Home />
           </div>
         </div>
       </div>
