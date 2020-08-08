@@ -10,25 +10,25 @@ function HomeCardSection() {
             cardClassName="dashboard-card-1"
             heading="New Applicants"
             icon="icofont-envelope"
-            subtitle="20"
+            subtitle="20 applications"
           />
           <Card
             cardClassName="dashboard-card-2"
             heading="Total Clients"
-            icon="icofont-envelope"
-            subtitle="20"
+            icon="icofont-ui-user-group"
+            subtitle="3087 clients"
           />
           <Card
             cardClassName="dashboard-card-3"
             heading="Overdue Loans"
-            icon="icofont-envelope"
-            subtitle="20"
+            icon="icofont-exclamation-circle"
+            subtitle="13 clients"
           />
           <Card
             cardClassName="dashboard-card-4"
-            heading="Expiry Date"
-            icon="icofont-envelope"
-            subtitle="20"
+            heading="License Expiry"
+            icon="icofont-pay"
+            subtitle="20 days"
           />
         </div>
       </div>
