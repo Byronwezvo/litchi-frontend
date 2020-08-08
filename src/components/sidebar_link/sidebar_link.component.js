@@ -14,17 +14,19 @@ import './sidebar_link.css';
  *
  * @author Byron Wezvo
  */
-function SidebarLink({ name, icon }) {
+function SidebarLink({ name, icon, active }) {
   return (
-    <div className="side-bar-link ">
-      <Link className="nav-link side_bar-link">
-        <div className="side_bar-link-text">
-          <span className="sidebar-link-icon">
-            <i class={icon}></i>
-          </span>
-          {name}
-        </div>
-      </Link>
+    <div className={active}>
+      <div className="side-bar-link">
+        <Link className="nav-link side_bar-link">
+          <div className="side_bar-link-text">
+            <span className="sidebar-link-icon">
+              <i class={icon}></i>
+            </span>
+            {name}
+          </div>
+        </Link>
+      </div>
     </div>
   );
 }
