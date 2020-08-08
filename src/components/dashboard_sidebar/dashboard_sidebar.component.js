@@ -10,7 +10,12 @@ function DashboardSidedrawer() {
     <div className="col-sm-2 side-drawer">
       <div>
         <SidebarSectionName name="Dashboard" />
-        <SidebarLink name="Home" icon="icofont-ui-home" />
+        <SidebarLink name="Home" icon="icofont-ui-home" active="active" />
+
+        <div class="section-divider"></div>
+
+        <SidebarSectionName name="Clients" />
+        <SidebarLink name="Client List" icon="icofont-ui-user" />
 
         <div class="section-divider"></div>
 
@@ -18,11 +23,6 @@ function DashboardSidedrawer() {
         <SidebarLink name="Applications" icon="icofont-paper" />
         <SidebarLink name="New Applications" icon="icofont-edit-alt" />
         <SidebarLink name="Closed Applications" icon="icofont-delete-alt" />
-
-        <div class="section-divider"></div>
-
-        <SidebarSectionName name="Clients" />
-        <SidebarLink name="Client List" icon="icofont-ui-user" />
 
         <div class="section-divider"></div>
 
