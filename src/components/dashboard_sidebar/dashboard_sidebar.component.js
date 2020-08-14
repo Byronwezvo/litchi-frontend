@@ -15,7 +15,11 @@ function DashboardSideBar() {
         <div class="section-divider"></div>
 
         <SidebarSectionName name="Clients" />
-        <SidebarLink name="Client List" icon="icofont-ui-user" />
+        <SidebarLink
+          name="Client List"
+          icon="icofont-ui-user"
+          route="/dashboard/client-list"
+        />
 
         <div class="section-divider"></div>
 
