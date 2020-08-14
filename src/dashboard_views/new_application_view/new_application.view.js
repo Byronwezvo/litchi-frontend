@@ -1,8 +1,5 @@
 import React from 'react';
 
-import './homeview.css';
-import HomeCardSection from '../../components/home_card-section/homecard_section.component';
-
 class NewApplication extends React.Component {
   render() {
     return (
