@@ -10,7 +10,12 @@ function DashboardSideBar() {
     <div className="col-sm-2 side-drawer">
       <div>
         <SidebarSectionName name="Dashboard" />
-        <SidebarLink name="Home" icon="icofont-ui-home" active="active" />
+        <SidebarLink
+          name="Home"
+          icon="icofont-ui-home"
+          active="active"
+          route="/dashboard"
+        />
 
         <div class="section-divider"></div>
 
