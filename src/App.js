@@ -11,6 +11,7 @@ import Pricing from './screens/pricing/pricing.screen';
 import Login from './screens/login/login.screen';
 import Signup from './screens/signup/signup.screen';
 import Dashboard from './screens/dashboard/dashboard.screen';
+import DashboardClientList from './screens/dashboard_client_list/dashboard_client_list';
 
 function App() {
   return (
@@ -32,6 +33,11 @@ function App() {
       <Route path="/login" exact component={Login}></Route>
       <Route path="/signup" exact component={Signup}></Route>
       <Route path="/dashboard" exact component={Dashboard}></Route>
+      <Route
+        path="/dashboard/client-list"
+        exact
+        component={DashboardClientList}
+      ></Route>
     </Router>
   );
 }
