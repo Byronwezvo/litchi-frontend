@@ -1,8 +1,8 @@
 import React from 'react';
 import { toast } from 'react-toastify';
 
-import DashboardHeader from '../../components/dashboard_header/dashboard_header.component';
 import './dashboard.css';
+import DashboardHeader from '../../components/dashboard_header/dashboard_header.component';
 import DashboardSideBar from '../../components/dashboard_sidebar/dashboard_sidebar.component';
 import Home from '../../dashboard_views/home_view/home.view';
 
