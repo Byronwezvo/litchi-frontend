@@ -30,7 +30,11 @@ function DashboardSideBar() {
 
         <SidebarSectionName name="Loan Applications" />
         <SidebarLink name="Applications" icon="icofont-paper" />
-        <SidebarLink name="New Applications" icon="icofont-edit-alt" />
+        <SidebarLink
+          name="New Applications"
+          icon="icofont-edit-alt"
+          route="/dashboard/new-application"
+        />
         <SidebarLink name="Closed Applications" icon="icofont-delete-alt" />
 
         <div class="section-divider"></div>
