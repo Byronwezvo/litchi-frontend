@@ -14,11 +14,11 @@ import './sidebar_link.css';
  *
  * @author Byron Wezvo
  */
-function SidebarLink({ name, icon, active }) {
+function SidebarLink({ name, icon, active, route }) {
   return (
     <div className={active}>
       <div className="side-bar-link">
-        <Link className="nav-link side_bar-link">
+        <Link className="nav-link side_bar-link" to={route}>
           <div className="side_bar-link-text">
             <span className="sidebar-link-icon">
               <i class={icon}></i>
