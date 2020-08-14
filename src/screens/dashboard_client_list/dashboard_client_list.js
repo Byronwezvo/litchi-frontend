@@ -1,4 +1,5 @@
 import React from 'react';
+import Dashboard from '../dashboard/dashboard.screen';
 
 class DashboardClientList extends React.Component {
   render() {
@@ -9,3 +10,5 @@ class DashboardClientList extends React.Component {
     );
   }
 }
+
+export default DashboardClientList;
