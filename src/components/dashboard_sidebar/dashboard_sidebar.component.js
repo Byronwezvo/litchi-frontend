@@ -5,7 +5,7 @@ import SidebarLink from '../sidebar_link/sidebar_link.component';
 
 import './dashboard_sidebar.css';
 
-function DashboardSidedrawer() {
+function DashboardSideBar() {
   return (
     <div className="col-sm-2 side-drawer">
       <div>
@@ -34,4 +34,4 @@ function DashboardSidedrawer() {
   );
 }
 
-export default DashboardSidedrawer;
+export default DashboardSideBar;
